@@ -1,0 +1,17 @@
+.overflow{
+    display:inline-block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space : nowrap;
+    color: red;
+
+}
+
+
+
+.overflow:hover{
+    overflow: visible;
+    white-space: normal;
+    height: auto;
+  
+}
