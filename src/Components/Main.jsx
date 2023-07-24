@@ -204,7 +204,7 @@ const Main = () => {
           height: "580px",
           display: "flex",
           flexWrap: "wrap",
-          flexDirection: "row",
+          flexDirection: "column",
           justifyContent: "space-around",
           alignItems: "center",
           backgroundColor: "#2F2FA2",
