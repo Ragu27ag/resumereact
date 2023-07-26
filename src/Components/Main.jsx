@@ -396,7 +396,7 @@ const Main = () => {
             </Link>
           </div>
           <div>
-            <Link to="agragunath27@gmail.com" target="_blank">
+            <Link to="https://mail.google.com/" target="_blank">
               <img
                 src={require("./google-mail-icon-logo-isolated-on-transparent-background-free-vector.jpg")}
                 height={40}

@@ -52,6 +52,15 @@ const Projects = () => {
           >
             Bus Ticket Application{" "}
           </a>
+          <p>
+            and more on my{" "}
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://github.com/Ragu27ag"
+            >
+              github
+            </a>
+          </p>
         </div>
       </div>
     </>
