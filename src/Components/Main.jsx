@@ -105,7 +105,7 @@ const Main = () => {
     //     const bloburl = window.URL.createObjectURL(new Blob([blob]));
     //   });
 
-    const filename = "resume"; //url.split("/").pop();
+    const filename = "resume_ragunath"; //url.split("/").pop();
     const atag = document.createElement("a");
     atag.href = url;
     atag.setAttribute("download", filename);
