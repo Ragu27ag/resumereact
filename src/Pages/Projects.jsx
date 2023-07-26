@@ -43,9 +43,13 @@ const Projects = () => {
             and admin. Users has to register and create an account and after the
             authentication process they are permited to access the
             application.They can book tickets.Admins has to login through their
-            credentials and can modify and delete tickets{" "}
+            credentials and can modify and delete tickets.Details are stoered in
+            cloud{" "}
           </p>
-          <a href="https://google.com" style={{ textDecoration: "none" }}>
+          <a
+            href="https://strong-parfait-f69617.netlify.app/"
+            style={{ textDecoration: "none" }}
+          >
             Bus Ticket Application{" "}
           </a>
         </div>

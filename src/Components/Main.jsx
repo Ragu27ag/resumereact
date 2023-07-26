@@ -96,7 +96,7 @@ const Main = () => {
 
   // const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-  const url = "resume.pdf";
+  const url = "agr_resume.pdf";
 
   const handledownload = (url) => {
     // fetch(url)
@@ -368,7 +368,10 @@ const Main = () => {
             >
               Click on the icons to view my profiles
             </Typography>
-            <Link to="https://www.google.com" target="_blank">
+            <Link
+              to="https://www.linkedin.com/in/ragunath-ag-258479285/"
+              target="_blank"
+            >
               <img
                 src={require("./free-linkedin-logo-icon-2430-thumb.png")}
                 alt="linkedin"
@@ -380,7 +383,7 @@ const Main = () => {
             </Link>
           </div>
           <div>
-            <Link to="https://www.google.com" target="_blank">
+            <Link to="https://www.naukri.com/mnjuser/homepage" target="_blank">
               <img
                 src={require("./png-transparent-naukri-com-employment-website-job-hunting-online-job-search-india-employment-online-job-search-thumbnail.png")}
                 height={40}
@@ -393,7 +396,7 @@ const Main = () => {
             </Link>
           </div>
           <div>
-            <Link to="https://www.google.com" target="_blank">
+            <Link to="agragunath27@gmail.com" target="_blank">
               <img
                 src={require("./google-mail-icon-logo-isolated-on-transparent-background-free-vector.jpg")}
                 height={40}
