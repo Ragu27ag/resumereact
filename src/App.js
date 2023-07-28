@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import Aos from "aos";
 import Caroussel from "./Pages/Caroussel";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Layout from "./Pages/Layout";
 
 Aos.init();
 
@@ -14,10 +15,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/carousel" element={<Caroussel />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path="about" element={<About />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="carousel" element={<Caroussel />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
