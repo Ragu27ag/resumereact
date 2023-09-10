@@ -1,4 +1,11 @@
-import { Box, Divider, List, ListItem, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  List,
+  ListItem,
+  ToggleButton,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
@@ -16,9 +23,10 @@ import FreeBreakfastIcon from "@mui/icons-material/FreeBreakfast";
 import CloudDoneIcon from "@mui/icons-material/CloudDone";
 import StorageIcon from "@mui/icons-material/Storage";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
-
 import "./About.css";
 import { Link } from "react-router-dom";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 const About = () => {
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -49,24 +57,46 @@ const About = () => {
     createData("Sri Krishna matric school", "Higher secondary", 78),
     createData("Panimalar Engineering College", "BE Mechanical", 66),
   ];
+
+  const [selected, setSelected] = React.useState(false);
+
+  console.log(selected);
+
   return (
     <Box
       sx={{
+        backgroundColor: selected && "#121212",
         color: "white",
         height: "100%",
         width: "100%",
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% 100%",
-        backgroundImage:
-          'url("https://img.freepik.com/free-vector/dark-blue-gradient-background_78370-2078.jpg")',
+        backgroundImage: selected
+          ? ""
+          : 'url("https://img.freepik.com/free-vector/dark-blue-gradient-background_78370-2078.jpg")',
       }}
     >
+      <ToggleButton
+        value="check"
+        selected={selected}
+        onChange={() => {
+          setSelected(!selected);
+        }}
+        sx={{ color: "white", position: "absolute", right: "10px" }}
+      >
+        {selected ? (
+          <DarkModeIcon sx={{ backgroundColor: "white" }} />
+        ) : (
+          <LightModeIcon color="white" />
+        )}
+      </ToggleButton>
       <Link
         to="/"
         style={{ textDecoration: "none", padding: "4px", color: "white" }}
       >
         <ArrowCircleLeftIcon sx={{ fontSize: "20px" }} /> Back
       </Link>
+
       <Typography
         variant="h3"
         m={2}

@@ -15,11 +15,16 @@ import "./free-linkedin-logo-icon-2430-thumb.png";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import ToggleButton from "@mui/material/ToggleButton";
 
 const Main = () => {
   const [state, setState] = React.useState({
     left: false,
   });
+
+  const [selected, setSelected] = React.useState(false);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -37,7 +42,7 @@ const Main = () => {
       sx={{
         width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
         marginTop: "100px",
-        backgroundColor: "rgb(47, 47, 162)",
+        backgroundColor: selected ? "#121212" : "rgb(47, 47, 162)",
       }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -142,7 +147,7 @@ const Main = () => {
           height: "150px",
           display: "flex",
           justifyContent: "space-between",
-          backgroundColor: "#2F2FA2",
+          backgroundColor: selected ? "#121212" : "#2F2FA2",
         }}
       >
         {["left"].map((anchor) => (
@@ -164,6 +169,11 @@ const Main = () => {
               anchor={anchor}
               open={state[anchor]}
               onClose={toggleDrawer(anchor, false)}
+              PaperProps={{
+                sx: {
+                  backgroundColor: selected ? "#121212" : "#2F2FA2",
+                },
+              }}
             >
               {list(anchor)}
             </Drawer>
@@ -185,17 +195,41 @@ const Main = () => {
           <a style={{ textDecoration: "none", color: "white" }} href="#main2">
             Intro
           </a>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;
           <a style={{ textDecoration: "none", color: "white" }} href="#main3">
             Experience
           </a>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           {adjust.width > 400 && (
-            <a style={{ textDecoration: "none", color: "white" }} href="#main4">
-              Resume
-            </a>
+            <>
+              <a
+                style={{ textDecoration: "none", color: "white" }}
+                href="#main4"
+              >
+                Resume
+              </a>
+            </>
           )}
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <ToggleButton
+            value="check"
+            selected={selected}
+            onChange={() => {
+              setSelected(!selected);
+            }}
+            sx={{
+              color: "white",
+              position: "absolute",
+              right: "10px",
+              top: "-1px",
+            }}
+          >
+            {selected ? (
+              <DarkModeIcon sx={{ backgroundColor: "white" }} />
+            ) : (
+              <LightModeIcon color="white" />
+            )}
+          </ToggleButton>
         </div>
       </div>
       <Box
@@ -207,7 +241,7 @@ const Main = () => {
           flexDirection: "row",
           justifyContent: "space-around",
           alignItems: "center",
-          backgroundColor: "#2F2FA2",
+          backgroundColor: selected ? "#121212" : "#2F2FA2",
         }}
       >
         <Typography
@@ -224,8 +258,9 @@ const Main = () => {
       <Box
         id={"main2"}
         sx={{
-          backgroundImage:
-            'url("https://img.freepik.com/free-vector/abstract-technology-blue-background_1035-17929.jpg")',
+          backgroundImage: selected
+            ? ""
+            : 'url("https://img.freepik.com/free-vector/abstract-technology-blue-background_1035-17929.jpg")',
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-around",
@@ -233,6 +268,7 @@ const Main = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           alignItems: "center",
+          backgroundColor: selected && "#121212",
         }}
       >
         <div
@@ -265,6 +301,7 @@ const Main = () => {
       <div
         id="main3"
         style={{
+          backgroundColor: selected && "#121212",
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-evenly",
@@ -272,8 +309,9 @@ const Main = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           color: "white",
-          backgroundImage:
-            'url("https://img.freepik.com/premium-vector/network-sophisticated-digital-connections_49459-659.jpg")',
+          backgroundImage: selected
+            ? ""
+            : 'url("https://img.freepik.com/premium-vector/network-sophisticated-digital-connections_49459-659.jpg")',
         }}
       >
         <Typography
@@ -317,6 +355,7 @@ const Main = () => {
         className="exp"
         id="main4"
         style={{
+          backgroundColor: selected && "#121212",
           display: "flex",
           flexWrap: "wrap",
           color: "white",
@@ -326,8 +365,9 @@ const Main = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           alignItems: "center",
-          backgroundImage:
-            'url("https://img.lovepik.com/background/20211021/large/lovepik-blue-technology-background-image_401612603.jpg")',
+          backgroundImage: selected
+            ? ""
+            : 'url("https://img.lovepik.com/background/20211021/large/lovepik-blue-technology-background-image_401612603.jpg")',
         }}
       >
         <div

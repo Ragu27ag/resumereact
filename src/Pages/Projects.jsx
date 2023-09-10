@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 
 const Projects = () => {
   return (
-    <>
-      <div style={{ backgroundColor: "black" }}>
+    <div style={{ backgroundColor: "black", height: "100vh" }}>
+      <div style={{}}>
         <Link
           to="/"
           style={{
             textDecoration: "none",
-
             padding: "4px",
             color: "white",
           }}
@@ -21,9 +20,6 @@ const Projects = () => {
       </div>
       <div
         style={{
-          backgroundColor: "black",
-          height: "100vh",
-          width: "100%",
           color: "white",
           display: "flex",
           flexWrap: "wrap",
@@ -31,14 +27,14 @@ const Projects = () => {
           alignItems: "center",
         }}
       >
-        <div style={{ margin: "5px" }}>
+        <div style={{ marginTop: "35px" }}>
           <Typography variant="h3" gutterBottom>
             Bus Ticket Booking Application
           </Typography>
           <Typography variant="h4" gutterBottom>
             Description
           </Typography>
-          <p>
+          <p style={{ overflowWrap: "break-word" }}>
             Application to book bus tickets.It has two interfaces one for user
             and admin. Users has to register and create an account and after the
             authentication process they are permited to access the
@@ -52,18 +48,26 @@ const Projects = () => {
           >
             Bus Ticket Application{" "}
           </a>
+
+          <Typography sx={{ marginTop: "5px" }} variant="h3" gutterBottom>
+            Zen Student and admin dashboard Application
+          </Typography>
+          <Typography variant="h4" gutterBottom>
+            Description
+          </Typography>
           <p>
-            and more on my{" "}
-            <a
-              style={{ textDecoration: "none" }}
-              href="https://github.com/Ragu27ag"
-            >
-              github
-            </a>
+            Application for maintaining student data and admin student
+            interaction using MERN
           </p>
+          <a
+            href="https://silver-blancmange-af8400.netlify.app/"
+            style={{ textDecoration: "none" }}
+          >
+            Zen Application{" "}
+          </a>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
