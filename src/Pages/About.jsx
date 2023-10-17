@@ -1,11 +1,4 @@
-import {
-  Box,
-  Divider,
-  List,
-  ListItem,
-  ToggleButton,
-  Typography,
-} from "@mui/material";
+import { Box, Divider, List, ListItem, ToggleButton, h3 } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
@@ -23,7 +16,7 @@ import FreeBreakfastIcon from "@mui/icons-material/FreeBreakfast";
 import CloudDoneIcon from "@mui/icons-material/CloudDone";
 import StorageIcon from "@mui/icons-material/Storage";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
-import "./About.css";
+import "../CSS/About.css";
 import { Link } from "react-router-dom";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
@@ -66,14 +59,14 @@ const About = () => {
     <Box
       sx={{
         backgroundColor: selected && "#121212",
-        color: "white",
+        color: selected ? "white" : "#121212",
         height: "100%",
         width: "100%",
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% 100%",
-        backgroundImage: selected
-          ? ""
-          : 'url("https://img.freepik.com/free-vector/dark-blue-gradient-background_78370-2078.jpg")',
+        // backgroundImage: selected
+        //   ? ""
+        //   : 'url("https://img.freepik.com/free-vector/dark-blue-gradient-background_78370-2078.jpg")',
       }}
     >
       <ToggleButton
@@ -82,107 +75,169 @@ const About = () => {
         onChange={() => {
           setSelected(!selected);
         }}
-        sx={{ color: "white", position: "absolute", right: "10px" }}
+        sx={{
+          position: "absolute",
+          right: "0.5em",
+          border: "none",
+          background: "none",
+        }}
       >
         {selected ? (
-          <DarkModeIcon sx={{ backgroundColor: "white" }} />
+          <DarkModeIcon sx={{ color: selected ? "white" : "#121212" }} />
         ) : (
-          <LightModeIcon color="white" />
+          <LightModeIcon sx={{ color: selected ? "white" : "#121212" }} />
         )}
       </ToggleButton>
       <Link
         to="/"
-        style={{ textDecoration: "none", padding: "4px", color: "white" }}
+        style={{
+          textDecoration: "none",
+          padding: "4px",
+          color: selected ? "white" : "#121212",
+        }}
       >
         <ArrowCircleLeftIcon sx={{ fontSize: "20px" }} /> Back
       </Link>
 
-      <Typography
+      <h3
         variant="h3"
-        m={2}
+        style={{ margin: "0.5em" }}
         gutterBottom
         data-aos="fade-right"
         data-aos-duration="1500"
       >
         Academic Details
-      </Typography>
-      <TableContainer component={Paper} sx={{ padding: "2px", margin: "2px" }}>
-        <Table
-          data-aos="zoom-in-right"
-          data-aos-duration="2000"
-          sx={{ minWidth: 400, backgroundColor: "#faa2a5" }}
-          aria-label="customized table"
+      </h3>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around",
+        }}
+      >
+        <TableContainer
+          component={Paper}
+          sx={{ padding: "2px", margin: "2px", maxWidth: 400 }}
         >
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>Institutions</StyledTableCell>
-              <StyledTableCell align="center">Grade</StyledTableCell>
-              <StyledTableCell align="center">Percentage</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <StyledTableRow key={row.name}>
-                <StyledTableCell
-                  sx={{ color: "red" }}
-                  component="th"
-                  scope="row"
-                >
-                  {row.name}
-                </StyledTableCell>
-                <StyledTableCell sx={{ color: "red" }} align="center">
-                  {row.calories}
-                </StyledTableCell>
-                <StyledTableCell sx={{ color: "red" }} align="center">
-                  {row.fat}
-                </StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+          <Table
+            data-aos="zoom-in-right"
+            data-aos-duration="2000"
+            sx={{
+              backgroundColor: selected ? "#121212" : "white",
+            }}
+            aria-label="customized table"
+          >
+            <TableHead>
+              <TableRow>
+                <StyledTableCell>Institutions</StyledTableCell>
+                <StyledTableCell align="center">Grade</StyledTableCell>
+                <StyledTableCell align="center">Percentage</StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <StyledTableRow key={row.name}>
+                  <StyledTableCell
+                    sx={{
+                      color: selected ? "white" : "#121212",
+                      fontFamily: "serif",
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                    }}
+                    component="th"
+                    scope="row"
+                  >
+                    {row.name}
+                  </StyledTableCell>
+                  <StyledTableCell
+                    sx={{
+                      color: selected ? "white" : "#121212",
+                      fontFamily: "serif",
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                    }}
+                    align="center"
+                  >
+                    {row.calories}
+                  </StyledTableCell>
+                  <StyledTableCell
+                    sx={{
+                      color: selected ? "white" : "#121212",
+                      fontFamily: "serif",
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                    }}
+                    align="center"
+                  >
+                    {row.fat}
+                  </StyledTableCell>
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
       <br />
       <Divider />
       <br />
       <div>
-        <Typography
+        <h3
           variant="h3"
           m={2}
+          style={{ margin: "0.5em" }}
           gutterBottom
           data-aos="fade-left"
           data-aos-duration="1500"
         >
           Certifications
-        </Typography>
-        <div style={{ display: "flex", flexWrap: "nowrap" }}>
+        </h3>
+        <div style={{ display: "flex", flexWrap: "nowrap", margin: "0.5em" }}>
           <WorkspacePremiumIcon sx={{ fontSize: "25px" }} />
           &nbsp;
           <p
             data-aos="fade-up-left"
             data-aos-duration="1500"
             className="overflow"
+            style={{
+              color: selected ? "white" : "#121212",
+              fontFamily: "serif",
+              fontWeight: "bold",
+              fontSize: "1rem",
+            }}
           >
             Completed ASNT-NDT Level 2 (PT,RT,UT,MPT) and a NDT Technician -{" "}
             <span>2021</span>
           </p>
         </div>
-        <div style={{ display: "flex", flexWrap: "nowrap" }}>
+        <div style={{ display: "flex", flexWrap: "nowrap", margin: "0.5em" }}>
           <WorkspacePremiumIcon sx={{ fontSize: "25px" }} /> &nbsp;
           <p
             data-aos="fade-up-left"
             data-aos-duration="2500"
-            style={{ display: "inline-block", color: "red" }}
+            style={{
+              color: selected ? "white" : "#121212",
+              fontFamily: "serif",
+              fontWeight: "bold",
+              fontSize: "1rem",
+              display: "inline-block",
+            }}
             className="overflow"
           >
             Completed Full Stack Development in JAVA - <span>2022</span>
           </p>
         </div>
-        <div style={{ display: "flex", flexWrap: "nowrap" }}>
+        <div style={{ display: "flex", flexWrap: "nowrap", margin: "0.5em" }}>
           <WorkspacePremiumIcon sx={{ fontSize: "25px" }} /> &nbsp;
           <p
             data-aos="fade-up-left"
             data-aos-duration="2500"
-            style={{ display: "inline-block", color: "red" }}
+            style={{
+              color: selected ? "white" : "#121212",
+              fontFamily: "serif",
+              fontWeight: "bold",
+              fontSize: "1rem",
+              display: "inline-block",
+            }}
             className="overflow"
           >
             Completed MERN Stack Development - <span>2023</span>
@@ -193,113 +248,170 @@ const About = () => {
       <Divider />
       <br />
       <div>
-        <Typography
+        <h3
           variant="h3"
           data-aos="fade-left"
           data-aos-duration="1500"
           m={2}
           gutterBottom
+          style={{ margin: "0.5em" }}
         >
           Skills
-        </Typography>
-        <Typography variant="h6" m={2} gutterBottom>
+        </h3>
+        <h3 variant="h6" style={{ margin: "0.5em" }} m={2} gutterBottom>
           FrontEnd
-        </Typography>
+        </h3>
         <List>
-          <ListItem sx={{ padding: "0px 0px 0px 15px" }}>
+          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
             <HtmlIcon />
             &nbsp;&nbsp;&nbsp;
             <p
               data-aos="fade-up-left"
               data-aos-duration="2000"
-              style={{ margin: "0px", color: "red" }}
+              style={{
+                margin: "0px",
+                color: "red",
+                color: selected ? "white" : "#121212",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "1rem",
+              }}
             >
               HTML
             </p>
           </ListItem>
-          <ListItem sx={{ padding: "0px 0px 0px 15px" }}>
+          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
             <CssIcon />
             &nbsp;&nbsp;&nbsp;
             <p
               data-aos="fade-up-left"
               data-aos-duration="2000"
-              style={{ margin: "0px", color: "red" }}
+              style={{
+                margin: "0px",
+                color: "red",
+                color: selected ? "white" : "#121212",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "1rem",
+              }}
             >
               CSS
             </p>
           </ListItem>
-          <ListItem sx={{ padding: "0px 0px 0px 15px" }}>
+          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
             <JavascriptIcon />
             &nbsp;&nbsp;&nbsp;
             <p
               data-aos="fade-up-left"
               data-aos-duration="2000"
-              style={{ margin: "0px", color: "red" }}
+              style={{
+                margin: "0px",
+                color: "red",
+                color: selected ? "white" : "#121212",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "1rem",
+              }}
             >
               JavaScript
             </p>
           </ListItem>
-          <ListItem sx={{ padding: "0px 0px 0px 15px" }}>
+          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
             <JavascriptIcon />
             &nbsp;&nbsp;&nbsp;
             <p
               data-aos="fade-up-left"
               data-aos-duration="2000"
-              style={{ margin: "0px", color: "red" }}
+              style={{
+                margin: "0px",
+                color: "red",
+                color: selected ? "white" : "#121212",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "1rem",
+              }}
             >
               React.js
             </p>
           </ListItem>
         </List>
-        <Typography variant="h6" m={2}>
+        <h3 variant="h6" style={{ margin: "0.5em" }} m={2}>
           Backend
-        </Typography>
+        </h3>
         <List>
-          <ListItem sx={{ padding: "0px 0px 0px 15px" }}>
+          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
             <FreeBreakfastIcon />
             &nbsp;&nbsp;&nbsp;
             <p
               data-aos="fade-up-left"
               data-aos-duration="2000"
-              style={{ margin: "0px", color: "red" }}
+              style={{
+                margin: "0px",
+                color: "red",
+                color: selected ? "white" : "#121212",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "1rem",
+              }}
             >
-              JAVA & ADV JAVA(servlet,jsp,JDBC)
+              JAVA & ADV JAVA
             </p>
           </ListItem>
-          <ListItem sx={{ padding: "0px 0px 0px 15px" }}>
+          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
             <JavascriptIcon />
             &nbsp;&nbsp;&nbsp;
             <p
               data-aos="fade-up-left"
               data-aos-duration="2000"
-              style={{ margin: "0px", color: "red" }}
+              style={{
+                margin: "0px",
+                color: "red",
+                color: selected ? "white" : "#121212",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "1rem",
+              }}
             >
               Node JS
             </p>
           </ListItem>
         </List>
-        <Typography variant="h6" m={2}>
+        <h3 variant="h6" style={{ margin: "0.5em" }} m={2}>
           DataBase
-        </Typography>
+        </h3>
         <List>
-          <ListItem sx={{ padding: "0px 0px 0px 15px" }}>
+          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
             <StorageIcon />
             &nbsp;&nbsp;&nbsp;
             <p
               data-aos="fade-up-left"
               data-aos-duration="1000"
-              style={{ margin: "0px", color: "red" }}
+              style={{
+                margin: "0px",
+                color: "red",
+                color: selected ? "white" : "#121212",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "1rem",
+              }}
             >
               Oracle SQL and PLSQL
             </p>
           </ListItem>
-          <ListItem sx={{ padding: "0px 0px 0px 15px" }}>
+          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
             <CloudDoneIcon />
             &nbsp;&nbsp;&nbsp;
             <p
               // data-aos="fade-up-left"
               // data-aos-duration="1000"
-              style={{ margin: "0px", color: "red" }}
+              style={{
+                margin: "0px",
+                color: "red",
+                color: selected ? "white" : "#121212",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "1rem",
+              }}
             >
               MongoDB
             </p>

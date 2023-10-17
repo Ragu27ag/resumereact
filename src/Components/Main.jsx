@@ -19,6 +19,9 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import ToggleButton from "@mui/material/ToggleButton";
 
+import "../CSS/main.css";
+import ScrollAnimation from "react-animate-on-scroll";
+
 const Main = () => {
   const [state, setState] = React.useState({
     left: false,
@@ -42,7 +45,7 @@ const Main = () => {
       sx={{
         width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
         marginTop: "100px",
-        backgroundColor: selected ? "#121212" : "rgb(47, 47, 162)",
+        backgroundColor: selected ? "#121212" : "white",
       }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -54,9 +57,12 @@ const Main = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <HomeIcon sx={{ color: "white" }} />
+                  <HomeIcon sx={{ color: selected ? "white" : "#121212" }} />
                 </ListItemIcon>
-                <ListItemText sx={{ color: "white" }} primary={"Home"} />
+                <ListItemText
+                  sx={{ color: selected ? "white" : "#121212" }}
+                  primary={"Home"}
+                />
               </ListItemButton>
             </ListItem>
           </Link>
@@ -64,9 +70,12 @@ const Main = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <InfoIcon sx={{ color: "white" }} />
+                  <InfoIcon sx={{ color: selected ? "white" : "#121212" }} />
                 </ListItemIcon>
-                <ListItemText sx={{ color: "white" }} primary={"About"} />
+                <ListItemText
+                  sx={{ color: selected ? "white" : "#121212" }}
+                  primary={"About"}
+                />
               </ListItemButton>
             </ListItem>
           </Link>
@@ -74,9 +83,14 @@ const Main = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <AccountTreeIcon sx={{ color: "white" }} />
+                  <AccountTreeIcon
+                    sx={{ color: selected ? "white" : "#121212" }}
+                  />
                 </ListItemIcon>
-                <ListItemText sx={{ color: "white" }} primary={"Projects"} />
+                <ListItemText
+                  sx={{ color: selected ? "white" : "#121212" }}
+                  primary={"Projects"}
+                />
               </ListItemButton>
             </ListItem>
           </Link>
@@ -84,9 +98,14 @@ const Main = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <AccountTreeIcon sx={{ color: "white" }} />
+                  <AccountTreeIcon
+                    sx={{ color: selected ? "white" : "#121212" }}
+                  />
                 </ListItemIcon>
-                <ListItemText sx={{ color: "white" }} primary={"Resume"}>
+                <ListItemText
+                  sx={{ color: selected ? "white" : "#121212" }}
+                  primary={"Resume"}
+                >
                   <a href="#main4">Resume</a>
                 </ListItemText>
               </ListItemButton>
@@ -127,11 +146,22 @@ const Main = () => {
 
   const [adjust, setAdjust] = useState(useAdjust());
 
+  const [animated, setAnimated] = useState(false);
+
+  console.log(adjust);
+
+  // const [ref, inView] = useInView({ triggerOnce: true });
+
+  // console.log(inView, animated, ref);
+
   useEffect(() => {
     const handleAdjust = () => {
       setAdjust(useAdjust);
     };
 
+    // if (inView) {
+    //   setAnimated(true);
+    // } else setAnimated(false);
     window.addEventListener("resize", handleAdjust);
 
     return () => {
@@ -139,15 +169,14 @@ const Main = () => {
     };
   }, [adjust]);
 
-  console.log(adjust);
   return (
     <Box sx={{}}>
       <div
         style={{
-          height: "150px",
+          height: "50px",
           display: "flex",
           justifyContent: "space-between",
-          backgroundColor: selected ? "#121212" : "#2F2FA2",
+          backgroundColor: selected ? "#121212" : "white",
         }}
       >
         {["left"].map((anchor) => (
@@ -160,7 +189,7 @@ const Main = () => {
               sx={{
                 m: 2,
                 height: "20px",
-                color: "white",
+                color: selected ? "white" : "#121212",
               }}
             >
               <MenuIcon />
@@ -171,7 +200,7 @@ const Main = () => {
               onClose={toggleDrawer(anchor, false)}
               PaperProps={{
                 sx: {
-                  backgroundColor: selected ? "#121212" : "#2F2FA2",
+                  backgroundColor: selected ? "#121212" : "white",
                 },
               }}
             >
@@ -179,31 +208,44 @@ const Main = () => {
             </Drawer>
           </React.Fragment>
         ))}
-        <div
-          style={{
-            height: "50px",
-            marginTop: "10px",
-            display: "flex",
-            flexWrap: "wrap",
-            // justifyContent: "center",
-          }}
-        >
-          <a style={{ textDecoration: "none", color: "white" }} href="#main1">
+        <div className="maindiv">
+          <a
+            style={{
+              textDecoration: "none",
+              color: selected ? "white" : "#121212",
+            }}
+            href="#main1"
+          >
             Home
           </a>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a style={{ textDecoration: "none", color: "white" }} href="#main2">
+          <a
+            style={{
+              textDecoration: "none",
+              color: selected ? "white" : "#121212",
+            }}
+            href="#main2"
+          >
             Intro
           </a>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <a style={{ textDecoration: "none", color: "white" }} href="#main3">
+          <a
+            style={{
+              textDecoration: "none",
+              color: selected ? "white" : "#121212",
+            }}
+            href="#main3"
+          >
             Experience
           </a>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           {adjust.width > 400 && (
             <>
               <a
-                style={{ textDecoration: "none", color: "white" }}
+                style={{
+                  textDecoration: "none",
+                  color: selected ? "white" : "#121212",
+                }}
                 href="#main4"
               >
                 Resume
@@ -218,84 +260,80 @@ const Main = () => {
               setSelected(!selected);
             }}
             sx={{
-              color: "white",
+              color: selected ? "white" : "#121212",
               position: "absolute",
               right: "10px",
               top: "-1px",
+              background: "none",
+              border: "none",
             }}
           >
             {selected ? (
-              <DarkModeIcon sx={{ backgroundColor: "white" }} />
+              <DarkModeIcon
+                sx={{
+                  color: selected ? "white" : "#121212",
+                }}
+              />
             ) : (
-              <LightModeIcon color="white" />
+              <LightModeIcon
+                sx={{
+                  color: selected ? "white" : "#121212",
+                  background: "none",
+                  border: "none",
+                }}
+              />
             )}
           </ToggleButton>
         </div>
       </div>
-      <Box
-        id={"main1"}
-        sx={{
-          height: "580px",
-          display: "flex",
-          flexWrap: "wrap",
-          flexDirection: "row",
-          justifyContent: "space-around",
-          alignItems: "center",
-          backgroundColor: selected ? "#121212" : "#2F2FA2",
-        }}
-      >
-        <Typography
-          data-aos="zoom-in"
-          data-aos-duration="2500"
-          sx={{ color: "white" }}
-          variant="h3"
-        >
-          Welcome to my PortFolio
-        </Typography>
 
-        <Caroussel />
+      <Box id={"main1"} className={selected ? "div1" : "div1normal"}>
+        <h3 className={selected ? "div1title" : "div1titlenormal"}>
+          Welcome to my PortFolio
+        </h3>
       </Box>
-      <Box
-        id={"main2"}
-        sx={{
-          backgroundImage: selected
-            ? ""
-            : 'url("https://img.freepik.com/free-vector/abstract-technology-blue-background_1035-17929.jpg")',
+      <div
+        style={{
           display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-around",
-          height: "690px",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          alignItems: "center",
-          backgroundColor: selected && "#121212",
+          justifyContent: "center",
+          border: "2px solid",
+          paddingTop: "50px",
+          backgroundColor: selected ? "#121212" : " white",
+          minHeight: "100vh",
         }}
       >
-        <div
-          data-aos="zoom-in-right"
-          data-aos-duration="2000"
-          style={{
-            width: "400px",
-            height: "300px",
-            textAlign: "center",
-          }}
-        >
-          <Typography variant="h2" pt={8} color={"white"}>
-            I'M Ragunath AG
-          </Typography>
+        <Caroussel />
+      </div>
+      <Box
+        className={selected ? "div2" : "div2normal"}
+        id={"main2"}
+        sx={
+          {
+            // backgroundImage: selected
+            //   ? ""
+            //   : 'url("https://img.freepik.com/free-vector/abstract-technology-blue-background_1035-17929.jpg")',
+          }
+        }
+      >
+        <div data-aos="zoom-in-right" data-aos-duration="2000">
+          <ScrollAnimation animateIn="tada">
+            <h2 className="div2name">I'M Ragunath AG</h2>
+          </ScrollAnimation>
         </div>
-        <Box
-          data-aos="zoom-in-left"
-          data-aos-duration="3000"
-          sx={{
-            width: "400px",
-            height: "300px",
-            textAlign: "center",
-          }}
-        >
-          <Typography variant="h2" pt={10} color={"white"} gutterBottom>
-            MERN Stack Developer
-          </Typography>
+        <Box data-aos="zoom-in-left" data-aos-duration="3000">
+          <ScrollAnimation animateIn="bounceInRight">
+            <h2
+              style={{
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "3rem",
+                paddingTop: "8px",
+              }}
+              className="div2role"
+            >
+              MERN Stack Developer
+            </h2>
+          </ScrollAnimation>
         </Box>
       </Box>
       <div
@@ -305,52 +343,78 @@ const Main = () => {
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-evenly",
-          height: "670px",
+
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           color: "white",
-          backgroundImage: selected
-            ? ""
-            : 'url("https://img.freepik.com/premium-vector/network-sophisticated-digital-connections_49459-659.jpg")',
+          position: "relative",
+          minHeight: "100vh",
+          // backgroundImage: selected
+          //   ? ""
+          //   : 'url("https://img.freepik.com/premium-vector/network-sophisticated-digital-connections_49459-659.jpg")',
         }}
       >
-        <Typography
-          data-aos="fade-right"
-          data-aos-duration="2000"
-          marginTop={5}
-          variant="h3"
-        >
-          Work Experience
-        </Typography>
+        <ScrollAnimation animateIn="fadeInDown" delay={1000}>
+          <h3
+            style={{
+              color: selected ? "white" : "#121212",
+              fontFamily: "serif",
+              fontWeight: "bold",
+              fontSize: "3rem",
+            }}
+            data-aos="fade-right"
+            data-aos-duration="2000"
+            className="div3work"
+          >
+            Work Experience
+          </h3>
+        </ScrollAnimation>
         <Divider sx={{ color: "white" }} />
-        <div
-          style={{
-            width: "400px",
-            height: "400px",
-            marginTop: "90px",
-            textAlign: "center",
-          }}
-        >
-          <Typography
-            data-aos="fade-up-left"
-            data-aos-duration="2000"
-            marginTop={5}
-            variant="h4"
+        <ScrollAnimation animateIn="fadeInRight" delay={1000}>
+          <div
+            style={{
+              width: "400px",
+              height: "400px",
+              marginTop: "90px",
+              textAlign: "center",
+              color: selected ? "white" : "#121212",
+            }}
           >
-            Software Developer - 2022
-          </Typography>
-          <p
-            data-aos="fade-left"
-            data-aos-duration="2000"
-            style={{ padding: "40px" }}
-          >
-            Having 1 year exprience as a software developer at Inspirisys
-            Solutions,chennai.Worked as a JAVA Developer along with sql and
-            plsql responsible for creating , customizing and fixing bugs to
-            ensure the smooth functioning of the application
-          </p>
-        </div>
+            <h4
+              data-aos="fade-up-left"
+              data-aos-duration="2000"
+              style={{
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "3rem",
+              }}
+              className="div3exp"
+            >
+              Software Developer - 2022
+            </h4>
+            <p
+              data-aos="fade-left"
+              data-aos-duration="2000"
+              style={{
+                padding: "40px",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "1rem",
+              }}
+              className="div3exp"
+            >
+              Having 1 year exprience as a software developer at Inspirisys
+              Solutions,chennai.Worked as a JAVA Developer along with sql and
+              plsql responsible for creating , customizing and fixing bugs to
+              ensure the smooth functioning of the application
+            </p>
+          </div>
+        </ScrollAnimation>
+        <div className={selected ? "design" : "normaldesign"}></div>
+        <div className={selected ? "design1" : "normaldesign1"}></div>
+        <div className={selected ? "design2" : "normaldesign2"}></div>
       </div>
+
       <div
         className="exp"
         id="main4"
@@ -365,21 +429,27 @@ const Main = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           alignItems: "center",
-          backgroundImage: selected
-            ? ""
-            : 'url("https://img.lovepik.com/background/20211021/large/lovepik-blue-technology-background-image_401612603.jpg")',
+          minHeight: "100vh",
+          // backgroundImage: selected
+          //   ? ""
+          //   : 'url("https://img.lovepik.com/background/20211021/large/lovepik-blue-technology-background-image_401612603.jpg")',
         }}
       >
         <div
-          style={{
-            height: "200px",
-            width: "500px",
-            textAlign: "center",
-          }}
           data-aos="zoom-out-right"
           data-aos-duration="2000"
+          className="div4butt"
         >
-          <Typography mt={2} variant="h5">
+          <Typography
+            sx={{
+              color: selected ? "white" : "#121212",
+              fontFamily: "serif",
+              fontWeight: "bold",
+              fontSize: "2rem",
+            }}
+            mt={2}
+            variant="h5"
+          >
             Click Here To Download my Resume
           </Typography>
           <Button
@@ -400,14 +470,22 @@ const Main = () => {
           }}
         >
           <div>
-            <Typography
+            <h5
               data-aos="fade-down"
               data-aos-duration="2000"
-              sx={{ textAlign: "center", paddingBottom: "20px" }}
+              style={{
+                textAlign: "center",
+                paddingBottom: "20px",
+                color: selected ? "white" : "#121212",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "2rem",
+              }}
               variant="h5"
+              className="div4iconshead"
             >
               Click on the icons to view my profiles
-            </Typography>
+            </h5>
             <Link
               to="https://www.linkedin.com/in/ragunath-ag-258479285/"
               target="_blank"
@@ -419,6 +497,7 @@ const Main = () => {
                 width={40}
                 data-aos="fade-left"
                 data-aos-duration="2000"
+                className="div4icons1"
               />
             </Link>
           </div>
@@ -432,6 +511,7 @@ const Main = () => {
                 data-aos="fade-left"
                 data-aos-duration="2500"
                 alt="naukri"
+                className="div4icons2"
               />
             </Link>
           </div>
@@ -445,6 +525,7 @@ const Main = () => {
                 data-aos="fade-left"
                 data-aos-duration="3000"
                 alt="mail"
+                className="div4icons3"
               />
             </Link>
           </div>

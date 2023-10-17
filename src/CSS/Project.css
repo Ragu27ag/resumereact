@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* .main {
+} */
+
+.cardmain {
+  color: black;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card1 {
+  max-width: 345px;
+  margin-top: 20px;
+  background-color: black;
+  border: 1px solid;
+  border-color: white;
+}
+
+.cardnormal {
+  max-width: 345px;
+  margin-top: 20px;
+  color: #121212;
+}
+
+.ovr {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+}
+
+.ovr:hover {
+  white-space: normal;
+  overflow: visible;
+  height: auto;
+  color: white;
+}
+
+.ovrnormal {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ovrnormal:hover {
+  white-space: normal;
+  overflow: visible;
+  height: auto;
+}

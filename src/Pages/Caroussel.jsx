@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 
 const Caroussel = () => {
   return (
-    <div style={{ paddingTop: "25px", width: "700px" }}>
+    <div style={{ width: "700px" }}>
       <Carousel data-bs-theme="dark">
         <Carousel.Item interval={2000}>
           <img
@@ -15,7 +15,7 @@ const Caroussel = () => {
           />
           <Carousel.Caption></Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={1000}>
+        <Carousel.Item interval={2000}>
           <img
             className="d-block w-100"
             src={require("./247392.webp")}
@@ -25,7 +25,7 @@ const Caroussel = () => {
           />
           <Carousel.Caption></Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={1000}>
+        <Carousel.Item interval={2000}>
           <img
             className="d-block w-100"
             src={require("./work-hard-think-fast-and-youll-last-quote-1.jpg")}
