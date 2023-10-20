@@ -1,4 +1,4 @@
-import { Box, Divider, List, ListItem, ToggleButton, h3 } from "@mui/material";
+import { Box, Divider, List, ListItem, ToggleButton } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
@@ -378,7 +378,7 @@ const About = () => {
                       data-aos-duration="2000"
                       style={{
                         margin: "0px",
-                        color: "red",
+
                         color: selected ? "white" : "#121212",
                         fontFamily: "serif",
                         fontWeight: "bold",
@@ -399,7 +399,7 @@ const About = () => {
                       data-aos-duration="2000"
                       style={{
                         margin: "0px",
-                        color: "red",
+
                         color: selected ? "white" : "#121212",
                         fontFamily: "serif",
                         fontWeight: "bold",
@@ -420,7 +420,7 @@ const About = () => {
                       data-aos-duration="2000"
                       style={{
                         margin: "0px",
-                        color: "red",
+
                         color: selected ? "white" : "#121212",
                         fontFamily: "serif",
                         fontWeight: "bold",
@@ -441,7 +441,7 @@ const About = () => {
                       data-aos-duration="2000"
                       style={{
                         margin: "0px",
-                        color: "red",
+
                         color: selected ? "white" : "#121212",
                         fontFamily: "serif",
                         fontWeight: "bold",
@@ -482,7 +482,7 @@ const About = () => {
                       data-aos-duration="2000"
                       style={{
                         margin: "0px",
-                        color: "red",
+
                         color: selected ? "white" : "#121212",
                         fontFamily: "serif",
                         fontWeight: "bold",
@@ -502,7 +502,7 @@ const About = () => {
                       data-aos-duration="2000"
                       style={{
                         margin: "0px",
-                        color: "red",
+
                         color: selected ? "white" : "#121212",
                         fontFamily: "serif",
                         fontWeight: "bold",
@@ -543,7 +543,7 @@ const About = () => {
                       data-aos-duration="1000"
                       style={{
                         margin: "0px",
-                        color: "red",
+
                         color: selected ? "white" : "#121212",
                         fontFamily: "serif",
                         fontWeight: "bold",
@@ -563,7 +563,7 @@ const About = () => {
                       // data-aos-duration="1000"
                       style={{
                         margin: "0px",
-                        color: "red",
+
                         color: selected ? "white" : "#121212",
                         fontFamily: "serif",
                         fontWeight: "bold",

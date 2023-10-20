@@ -120,7 +120,7 @@ const Main = () => {
 
   // const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-  const url = "resume_ragunathag_17082023.pdf";
+  const url = "ragunath_resume_a4_latest.pdf";
 
   const handledownload = (url) => {
     // fetch(url)
@@ -145,8 +145,6 @@ const Main = () => {
   };
 
   const [adjust, setAdjust] = useState(useAdjust());
-
-  const [animated, setAnimated] = useState(false);
 
   console.log(adjust);
 

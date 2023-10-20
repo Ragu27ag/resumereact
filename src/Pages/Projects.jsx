@@ -110,6 +110,7 @@ const Projects = () => {
           <Card
             // sx={{
             //   backgroundColor: selected ? "#121212" : "white",
+            //   color: selected ? "white" : "#121212",
             // }}
             key={i}
             className={selected ? "card1" : "cardnormal"}
@@ -161,42 +162,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-{
-  /* <Typography variant="h3" gutterBottom>
-          Bus Ticket Booking Application
-        </Typography>
-        <Typography variant="h4" gutterBottom>
-          Description
-        </Typography>
-        <p style={{ overflowWrap: "break-word" }}>
-          Application to book bus tickets.It has two interfaces one for user and
-          admin. Users has to register and create an account and after the
-          authentication process they are permited to access the
-          application.They can book tickets.Admins has to login through their
-          credentials and can modify and delete tickets.Details are stoered in
-          cloud{" "}
-        </p>
-        <a
-          href="https://strong-parfait-f69617.netlify.app/"
-          style={{ textDecoration: "none" }}
-        >
-          Bus Ticket Application{" "}
-        </a>
-        <Typography sx={{ marginTop: "15px" }} variant="h3" gutterBottom>
-          Zen Student and admin dashboard Application
-        </Typography>
-        <Typography variant="h4" gutterBottom>
-          Description
-        </Typography>
-        <p>
-          Application for maintaining student data and admin student interaction
-          using MERN
-        </p>
-        <a
-          href="https://silver-blancmange-af8400.netlify.app/"
-          style={{ textDecoration: "none" }}
-        >
-          Zen Application{" "}
-      </a> */
-}
