@@ -45,7 +45,7 @@ const Main = () => {
       sx={{
         width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
         marginTop: "100px",
-        backgroundColor: selected ? "#121212" : "white",
+        backgroundColor: selected ? "#121212" : "#e1e1e1",
       }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -176,7 +176,7 @@ const Main = () => {
           height: "50px",
           display: "flex",
           justifyContent: "space-between",
-          backgroundColor: selected ? "#121212" : "white",
+          backgroundColor: selected ? "#121212" : "#e1e1e1",
         }}
       >
         {["left"].map((anchor) => (
@@ -200,7 +200,7 @@ const Main = () => {
               onClose={toggleDrawer(anchor, false)}
               PaperProps={{
                 sx: {
-                  backgroundColor: selected ? "#121212" : "white",
+                  backgroundColor: selected ? "#121212" : "#e1e1e1",
                 },
               }}
             >
@@ -286,24 +286,27 @@ const Main = () => {
           </ToggleButton>
         </div>
       </div>
-
-      <Box id={"main1"} className={selected ? "div1" : "div1normal"}>
-        <h3 className={selected ? "div1title" : "div1titlenormal"}>
-          Welcome to my PortFolio
-        </h3>
-      </Box>
       <div
         style={{
           display: "flex",
           justifyContent: "center",
-          border: "2px solid",
-          paddingTop: "50px",
+          paddingTop: "40px",
           backgroundColor: selected ? "#121212" : " white",
-          minHeight: "100vh",
         }}
       >
         <Caroussel />
       </div>
+      <Box id={"main1"} className={selected ? "div1" : "div1normal"}>
+        <ScrollAnimation animateIn="zoomIn" duration={2}>
+          <h3 className={selected ? "div1title" : "div1titlenormal"}>
+            Welcome to my PortFolio
+          </h3>
+        </ScrollAnimation>
+        <div className={selected ? "designname" : "normaldesignname"}></div>
+        <div className={selected ? "design1name" : "normaldesign1name"}></div>
+        <div className={selected ? "design2name" : "normaldesign2name"}></div>
+      </Box>
+
       <Box
         className={selected ? "div2" : "div2normal"}
         id={"main2"}
@@ -316,12 +319,12 @@ const Main = () => {
         }
       >
         <div data-aos="zoom-in-right" data-aos-duration="2000">
-          <ScrollAnimation animateIn="tada">
+          <ScrollAnimation animateIn="bounceInLeft" duration={2}>
             <h2 className="div2name">I'M Ragunath AG</h2>
           </ScrollAnimation>
         </div>
         <Box data-aos="zoom-in-left" data-aos-duration="3000">
-          <ScrollAnimation animateIn="bounceInRight">
+          <ScrollAnimation animateIn="bounceInRight" duration={2}>
             <h2
               style={{
                 fontFamily: "serif",
@@ -334,6 +337,14 @@ const Main = () => {
               MERN Stack Developer
             </h2>
           </ScrollAnimation>
+
+          <div className={selected ? "designintro" : "normaldesignintro"}></div>
+          <div
+            className={selected ? "design1intro" : "normaldesign1intro"}
+          ></div>
+          <div
+            className={selected ? "design2intro" : "normaldesign2intro"}
+          ></div>
         </Box>
       </Box>
       <div
@@ -354,7 +365,7 @@ const Main = () => {
           //   : 'url("https://img.freepik.com/premium-vector/network-sophisticated-digital-connections_49459-659.jpg")',
         }}
       >
-        <ScrollAnimation animateIn="fadeInDown" delay={1000}>
+        <ScrollAnimation animateIn="fadeInDown" duration={2}>
           <h3
             style={{
               color: selected ? "white" : "#121212",
@@ -368,19 +379,22 @@ const Main = () => {
           >
             Work Experience
           </h3>
+          <Divider
+            variant="middle"
+            sx={{ backgroundColor: "rgb(110, 255, 110)", height: "5px" }}
+          />
         </ScrollAnimation>
-        <Divider sx={{ color: "white" }} />
-        <ScrollAnimation animateIn="fadeInRight" delay={1000}>
+
+        <ScrollAnimation animateIn="fadeInRight" duration={2}>
           <div
             style={{
-              width: "400px",
               height: "400px",
               marginTop: "90px",
               textAlign: "center",
               color: selected ? "white" : "#121212",
             }}
           >
-            <h4
+            <h3
               data-aos="fade-up-left"
               data-aos-duration="2000"
               style={{
@@ -391,23 +405,29 @@ const Main = () => {
               className="div3exp"
             >
               Software Developer - 2022
-            </h4>
-            <p
-              data-aos="fade-left"
-              data-aos-duration="2000"
-              style={{
-                padding: "40px",
-                fontFamily: "serif",
-                fontWeight: "bold",
-                fontSize: "1rem",
-              }}
-              className="div3exp"
-            >
-              Having 1 year exprience as a software developer at Inspirisys
-              Solutions,chennai.Worked as a JAVA Developer along with sql and
-              plsql responsible for creating , customizing and fixing bugs to
-              ensure the smooth functioning of the application
-            </p>
+              <Divider
+                variant="middle"
+                sx={{ backgroundColor: "rgb(110, 255, 110)", height: "5px" }}
+              />
+            </h3>
+            <div style={{ maxWidth: "300px", textAlign: "start" }}>
+              <p
+                data-aos="fade-left"
+                data-aos-duration="2000"
+                style={{
+                  padding: "40px",
+                  fontFamily: "serif",
+                  fontWeight: "bold",
+                  fontSize: "1rem",
+                }}
+                className="div3exp"
+              >
+                Having 1 year exprience as a software developer at Inspirisys
+                Solutions,chennai.Worked as a JAVA Developer along with sql and
+                plsql responsible for creating , customizing and fixing bugs to
+                ensure the smooth functioning of the application
+              </p>
+            </div>
           </div>
         </ScrollAnimation>
         <div className={selected ? "design" : "normaldesign"}></div>
@@ -425,11 +445,9 @@ const Main = () => {
           color: "white",
           fontFamily: "'Josefin Sans', cursive",
           justifyContent: "space-around",
-          height: "600px",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
           alignItems: "center",
           minHeight: "100vh",
+          minWidth: "100vw",
           // backgroundImage: selected
           //   ? ""
           //   : 'url("https://img.lovepik.com/background/20211021/large/lovepik-blue-technology-background-image_401612603.jpg")',
@@ -440,96 +458,118 @@ const Main = () => {
           data-aos-duration="2000"
           className="div4butt"
         >
-          <Typography
-            sx={{
-              color: selected ? "white" : "#121212",
-              fontFamily: "serif",
-              fontWeight: "bold",
-              fontSize: "2rem",
-            }}
-            mt={2}
-            variant="h5"
-          >
-            Click Here To Download my Resume
-          </Typography>
-          <Button
-            onClick={() => handledownload(url)}
-            sx={{ marginTop: "50px", backgroundColor: "yellow" }}
-          >
-            Download
-          </Button>
-        </div>
-        <div
-          style={{
-            height: "300px",
-            width: "500px",
-            textAlign: "center",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-evenly",
-          }}
-        >
-          <div>
-            <h5
-              data-aos="fade-down"
-              data-aos-duration="2000"
-              style={{
-                textAlign: "center",
-                paddingBottom: "20px",
+          <ScrollAnimation animateIn="fadeInLeft" duration={2}>
+            <Typography
+              sx={{
                 color: selected ? "white" : "#121212",
                 fontFamily: "serif",
                 fontWeight: "bold",
                 fontSize: "2rem",
               }}
+              mt={2}
               variant="h5"
-              className="div4iconshead"
             >
-              Click on the icons to view my profiles
-            </h5>
-            <Link
-              to="https://www.linkedin.com/in/ragunath-ag-258479285/"
-              target="_blank"
+              Click Here To Download my Resume
+            </Typography>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn="tada" duration={2}>
+            <Button
+              onClick={() => handledownload(url)}
+              sx={{ marginTop: "50px", backgroundColor: "yellow" }}
             >
-              <img
-                src={require("./free-linkedin-logo-icon-2430-thumb.png")}
-                alt="linkedin"
-                height={40}
-                width={40}
-                data-aos="fade-left"
-                data-aos-duration="2000"
-                className="div4icons1"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="https://www.naukri.com/mnjuser/homepage" target="_blank">
-              <img
-                src={require("./png-transparent-naukri-com-employment-website-job-hunting-online-job-search-india-employment-online-job-search-thumbnail.png")}
-                height={40}
-                width={40}
-                style={{ borderRadius: "50%" }}
-                data-aos="fade-left"
-                data-aos-duration="2500"
-                alt="naukri"
-                className="div4icons2"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link to="https://mail.google.com/" target="_blank">
-              <img
-                src={require("./google-mail-icon-logo-isolated-on-transparent-background-free-vector.jpg")}
-                height={40}
-                width={40}
-                style={{ borderRadius: "50%" }}
-                data-aos="fade-left"
-                data-aos-duration="3000"
-                alt="mail"
-                className="div4icons3"
-              />
-            </Link>
-          </div>
+              Download
+            </Button>
+          </ScrollAnimation>
         </div>
+        <ScrollAnimation animateIn="fadeInDown" duration={2}>
+          <div
+            style={{
+              textAlign: "center",
+              display: "flex",
+              flexWrap: "wrap",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <h5
+                data-aos="fade-down"
+                data-aos-duration="2000"
+                style={{
+                  textAlign: "center",
+                  paddingBottom: "10px",
+                  color: selected ? "white" : "#121212",
+                  fontFamily: "serif",
+                  fontWeight: "bold",
+                  fontSize: "2rem",
+                }}
+                variant="h5"
+                className="div4iconshead"
+              >
+                Click on the icons to view my profiles
+              </h5>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-between",
+              }}
+            >
+              <div style={{ marginLeft: "10px" }}>
+                <Link
+                  to="https://www.linkedin.com/in/ragunath-ag-258479285/"
+                  target="_blank"
+                >
+                  <img
+                    src={require("./free-linkedin-logo-icon-2430-thumb.png")}
+                    alt="linkedin"
+                    height={40}
+                    width={40}
+                    data-aos="fade-left"
+                    data-aos-duration="2000"
+                    className="div4icons1"
+                  />
+                </Link>
+              </div>
+              <div style={{ marginLeft: "10px" }}>
+                <Link
+                  to="https://www.naukri.com/mnjuser/homepage"
+                  target="_blank"
+                >
+                  <img
+                    src={require("./png-transparent-naukri-com-employment-website-job-hunting-online-job-search-india-employment-online-job-search-thumbnail.png")}
+                    height={40}
+                    width={40}
+                    style={{ borderRadius: "50%" }}
+                    data-aos="fade-left"
+                    data-aos-duration="2500"
+                    alt="naukri"
+                    className="div4icons2"
+                  />
+                </Link>
+              </div>
+              <div style={{ marginLeft: "10px" }}>
+                <Link to="https://github.com/Ragu27ag" target="_blank">
+                  <img
+                    src={require("./GitHub-Mark.png")}
+                    height={40}
+                    width={40}
+                    style={{ borderRadius: "50%" }}
+                    data-aos="fade-left"
+                    data-aos-duration="3000"
+                    alt="mail"
+                    className="div4icons3"
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </ScrollAnimation>
+      </div>
+      <div className="footer">
+        <span>© 2023 Ragunath AG</span>
       </div>
     </Box>
   );

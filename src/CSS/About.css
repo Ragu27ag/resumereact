@@ -1,17 +1,205 @@
-.overflow{
-    display:inline-block;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space : nowrap;
-    color: red;
-
+.overflow {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100vh;
+  color: white;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+  overflow-wrap: break-word;
 }
 
+.overflownormal {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+  width: 100vh;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+  color: black;
+  overflow-wrap: break-word;
+}
 
+.overflow:hover {
+  overflow: visible;
+  white-space: normal;
+  height: auto;
+}
 
-.overflow:hover{
-    overflow: visible;
-    white-space: normal;
-    height: auto;
-  
+.overflownormal:hover {
+  overflow: visible;
+  white-space: normal;
+  height: auto;
+}
+
+.div1 {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.div1normal {
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: white;
+}
+
+.designnameabout {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgb(110, 255, 110);
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+  z-index: -1;
+}
+
+.normaldesignnameabout {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgb(110, 255, 110);
+  position: absolute;
+  bottom: 0px;
+  right: 50px;
+  z-index: -1;
+}
+
+.design1nameabout {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  z-index: -1;
+}
+
+.normaldesign1nameabout {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  z-index: -1;
+}
+
+.design2nameabout {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  bottom: 120px;
+  right: 200px;
+  z-index: -1;
+}
+
+.normaldesign2nameabout {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  bottom: 120px;
+  right: 200px;
+  z-index: -1;
+}
+
+.designnameacademic {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgb(110, 255, 110);
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  z-index: -1;
+}
+
+.normaldesignnameacademic {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgb(110, 255, 110);
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
+  z-index: 1;
+}
+
+.design1nameacademic {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  z-index: -1;
+}
+
+.normaldesign1nameacademic {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  z-index: 1;
+}
+
+.design2nameacademic {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  bottom: 120px;
+  left: 200px;
+  z-index: -1;
+}
+
+.normaldesign2nameacademic {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  bottom: 120px;
+  left: 200px;
+  z-index: 1;
+}
+
+@media (max-width: 670px) {
+  .normaldesignnameacademic {
+    display: none;
+  }
+
+  .normaldesign1nameacademic {
+    display: none;
+  }
+
+  .normaldesign2nameacademic {
+    display: none;
+  }
 }

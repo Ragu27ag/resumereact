@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
 .maindiv {
   height: 50px;
   margin-top: 10px;
@@ -36,6 +43,7 @@
   color: white;
   align-items: center;
   background-color: #121212;
+  position: relative;
 }
 
 .div2normal {
@@ -44,6 +52,7 @@
   justify-content: space-around;
   min-height: 100vh;
   align-items: center;
+  position: relative;
 }
 
 .div2name {
@@ -154,6 +163,138 @@
   z-index: -1;
 }
 
+.designname {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgb(110, 255, 110);
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  z-index: -1;
+}
+
+.normaldesignname {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgb(110, 255, 110);
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  z-index: 1;
+}
+
+.design1name {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  z-index: -1;
+}
+
+.normaldesign1name {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  z-index: 1;
+}
+
+.design2name {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  top: 120px;
+  right: 200px;
+  z-index: -1;
+}
+
+.normaldesign2name {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  top: 120px;
+  right: 200px;
+  z-index: 1;
+}
+
+.designintro {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: rgb(110, 255, 110);
+  position: absolute;
+  top: 200px;
+  right: 500px;
+  z-index: -1;
+}
+
+.normaldesignintro {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: rgb(110, 255, 110);
+  position: absolute;
+  top: 200px;
+  right: 500px;
+  z-index: -1;
+}
+
+.design1intro {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  top: 180px;
+  right: 500px;
+  z-index: -1;
+}
+
+.normaldesign1intro {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  top: 180px;
+  right: 450px;
+  z-index: -1;
+}
+
+.design2intro {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  top: 400px;
+  right: 700px;
+  z-index: -1;
+}
+
+.normaldesign2intro {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: green;
+  position: absolute;
+  top: 400px;
+  right: 700px;
+  z-index: -1;
+}
+
 @media (max-width: 300px) {
   .design {
     display: none;
@@ -181,8 +322,9 @@
   justify-content: center;
   align-items: center;
   background-color: #121212;
-  border: 2px solid;
+
   min-height: 100vh;
+  position: relative;
   /* opacity: 1;
   transform: translateY(0); */
 }
@@ -192,9 +334,43 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border: 2px solid;
+
   min-height: 100vh;
+  position: relative;
   /* transform: translateY(20px);
   transition: opacity 10s, transform 10s;
   opacity: 0; */
+}
+
+.footer {
+  background-color: #e1e1e1;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: small;
+}
+
+.triangleleft {
+  position: absolute;
+  width: 500px;
+  height: 0;
+  border-bottom: 100px solid red;
+  border-right: 100px solid transparent;
+  top: -80px;
+  z-index: 0;
+}
+
+.triangleright {
+  position: absolute;
+  top: -80px;
+  width: 500px;
+  height: 0;
+  border-top: 100px solid red;
+  border-left: 100px solid transparent;
+  z-index: 0;
 }

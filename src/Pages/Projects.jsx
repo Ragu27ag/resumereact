@@ -1,4 +1,4 @@
-import { ToggleButton, Typography } from "@mui/material";
+import { Divider, ToggleButton, Typography } from "@mui/material";
 import React from "react";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import { Link } from "react-router-dom";
@@ -6,11 +6,12 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
+import LaunchIcon from "@mui/icons-material/Launch";
 import "../CSS/Project.css";
 
-import vidsrc from "../Videos/20231015_231636.mp4";
-import vidsrc2 from "../Videos/20231015_233833.mp4";
+import vidsrc from "../Videos/20231019_132928.mp4";
+import vidsrc2 from "../Videos/20231019_133401.mp4";
+import vidsrc3 from "../Videos/20231019_133626.mp4";
 
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
@@ -23,19 +24,30 @@ const Projects = () => {
       name: "Zenclass Portal",
       des: "Zen Student and admin dashboard Application",
       src: vidsrc,
+      github: "https://github.com/Ragu27ag/zenfrontend",
+      launch: "https://silver-blancmange-af8400.netlify.app/login",
     },
     {
       name: "Bus ticket Booking Application",
       des: "Application to book bus tickets.It has two interfaces one for user and admin Users has to register and create an account and after theauthentication process they are permited to access theapplication.They can book tickets.Admins has to login through theircredentials and can modify and delete tickets.Details are stoered incloud",
       src: vidsrc2,
+      github: "https://github.com/Ragu27ag/busticket",
+      launch: "https://strong-parfait-f69617.netlify.app/",
     },
-    { name: "Project Site", des: "real time project" },
+    {
+      name: "Project Site (Phase - 1)",
+      des: "Real time project for a startup which sells their products through online(still under development)",
+      src: vidsrc3,
+      github: "",
+      launch: "https://simplebro.netlify.app/",
+    },
   ];
 
   return (
     <div
       style={{
         backgroundColor: selected ? "#121212" : "white",
+        position: "relative",
       }}
       className="main"
     >
@@ -59,7 +71,8 @@ const Projects = () => {
         }}
         sx={{
           position: "absolute",
-          right: "0.5em",
+          top: "0px",
+          right: "0px",
           border: "none",
           background: "none",
         }}
@@ -70,6 +83,19 @@ const Projects = () => {
           <LightModeIcon sx={{ color: selected ? "white" : "#121212" }} />
         )}
       </ToggleButton>
+      <div style={{ margin: "5px", color: selected ? "white" : "black" }}>
+        <h2>
+          Projects{" "}
+          <Divider
+            variant="middle"
+            sx={{
+              backgroundColor: "rgb(110, 255, 110)",
+              height: "5px",
+              width: "70px",
+            }}
+          />
+        </h2>
+      </div>
       <div
         // style={{
         //   color: "white",
@@ -96,7 +122,7 @@ const Projects = () => {
               </video>
             </CardMedia>
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+              <Typography gutterBottom variant="h5" component="div" sx={{}}>
                 {prt.name}
               </Typography>
               <Typography
@@ -108,8 +134,24 @@ const Projects = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Share</Button>
-              <Button size="small">Learn More</Button>
+              <Link to={prt.github} target="_blank">
+                {prt.github ? (
+                  <img
+                    src={require("../Components/GitHub-Mark.png")}
+                    height={30}
+                    width={30}
+                    style={{ borderRadius: "50%" }}
+                    alt="mail"
+                    className="div4icons3"
+                  />
+                ) : (
+                  ""
+                )}
+              </Link>
+
+              <Link to={prt.launch} target="_blank">
+                <LaunchIcon sx={{ color: selected ? "white" : "black" }} />
+              </Link>
             </CardActions>
           </Card>
         ))}

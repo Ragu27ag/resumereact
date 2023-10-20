@@ -20,6 +20,7 @@ import "../CSS/About.css";
 import { Link } from "react-router-dom";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const About = () => {
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -60,10 +61,7 @@ const About = () => {
       sx={{
         backgroundColor: selected && "#121212",
         color: selected ? "white" : "#121212",
-        height: "100%",
-        width: "100%",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "100% 100%",
+
         // backgroundImage: selected
         //   ? ""
         //   : 'url("https://img.freepik.com/free-vector/dark-blue-gradient-background_78370-2078.jpg")',
@@ -77,7 +75,7 @@ const About = () => {
         }}
         sx={{
           position: "absolute",
-          right: "0.5em",
+          right: "10px",
           border: "none",
           background: "none",
         }}
@@ -98,326 +96,490 @@ const About = () => {
       >
         <ArrowCircleLeftIcon sx={{ fontSize: "20px" }} /> Back
       </Link>
-
-      <h3
-        variant="h3"
-        style={{ margin: "0.5em" }}
-        gutterBottom
-        data-aos="fade-right"
-        data-aos-duration="1500"
-      >
-        Academic Details
-      </h3>
       <div
+        className="certdiv"
         style={{
+          minHeight: "100vh",
+          minWidth: "100vw",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-around",
+          flexWrap: "wrap",
+          justifyContent: "flex-start",
+          position: "relative",
         }}
       >
-        <TableContainer
-          component={Paper}
-          sx={{ padding: "2px", margin: "2px", maxWidth: 400 }}
-        >
-          <Table
-            data-aos="zoom-in-right"
-            data-aos-duration="2000"
-            sx={{
-              backgroundColor: selected ? "#121212" : "white",
-            }}
-            aria-label="customized table"
-          >
-            <TableHead>
-              <TableRow>
-                <StyledTableCell>Institutions</StyledTableCell>
-                <StyledTableCell align="center">Grade</StyledTableCell>
-                <StyledTableCell align="center">Percentage</StyledTableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <StyledTableRow key={row.name}>
-                  <StyledTableCell
-                    sx={{
-                      color: selected ? "white" : "#121212",
-                      fontFamily: "serif",
-                      fontWeight: "bold",
-                      fontSize: "1rem",
-                    }}
-                    component="th"
-                    scope="row"
-                  >
-                    {row.name}
-                  </StyledTableCell>
-                  <StyledTableCell
-                    sx={{
-                      color: selected ? "white" : "#121212",
-                      fontFamily: "serif",
-                      fontWeight: "bold",
-                      fontSize: "1rem",
-                    }}
-                    align="center"
-                  >
-                    {row.calories}
-                  </StyledTableCell>
-                  <StyledTableCell
-                    sx={{
-                      color: selected ? "white" : "#121212",
-                      fontFamily: "serif",
-                      fontWeight: "bold",
-                      fontSize: "1rem",
-                    }}
-                    align="center"
-                  >
-                    {row.fat}
-                  </StyledTableCell>
-                </StyledTableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </div>
-      <br />
-      <Divider />
-      <br />
-      <div>
-        <h3
-          variant="h3"
-          m={2}
-          style={{ margin: "0.5em" }}
-          gutterBottom
-          data-aos="fade-left"
-          data-aos-duration="1500"
-        >
-          Certifications
-        </h3>
-        <div style={{ display: "flex", flexWrap: "nowrap", margin: "0.5em" }}>
-          <WorkspacePremiumIcon sx={{ fontSize: "25px" }} />
-          &nbsp;
-          <p
-            data-aos="fade-up-left"
+        <div style={{}}>
+          <h3
+            variant="h3"
+            m={2}
+            style={{ margin: "0.5em" }}
+            gutterBottom
+            data-aos="fade-left"
             data-aos-duration="1500"
-            className="overflow"
+          >
+            Certifications
+            <Divider
+              variant="middle"
+              sx={{
+                backgroundColor: "rgb(110, 255, 110)",
+                height: "5px",
+                width: "130px",
+              }}
+            />
+          </h3>
+
+          <List>
+            <ScrollAnimation animateIn="bounceInRight" duration={1}>
+              <ListItem>
+                <WorkspacePremiumIcon sx={{ fontSize: "25px" }} />
+                &nbsp;
+                <p
+                  data-aos="fade-up-left"
+                  data-aos-duration="1500"
+                  // className={selected ? "overflow" : "overflownormal"}
+                  style={{
+                    color: selected ? "white" : "#121212",
+                    fontFamily: "serif",
+                    fontWeight: "bold",
+                    fontSize: "1rem",
+                    margin: 0,
+                  }}
+                >
+                  Completed ASNT-NDT Level 2 (PT,RT,UT,MPT) and a NDT Technician
+                  - <span>2021</span>
+                </p>
+              </ListItem>
+            </ScrollAnimation>
+            <ScrollAnimation animateIn="bounceInRight" duration={1.5}>
+              <ListItem>
+                <WorkspacePremiumIcon sx={{ fontSize: "25px" }} /> &nbsp;
+                <p
+                  data-aos="fade-up-left"
+                  data-aos-duration="2500"
+                  style={{
+                    color: selected ? "white" : "#121212",
+                    fontFamily: "serif",
+                    fontWeight: "bold",
+                    fontSize: "1rem",
+                    display: "inline-block",
+                    margin: 0,
+                  }}
+                  // className={selected ? "overflow" : "overflownormal"}
+                >
+                  Completed Full Stack Development in JAVA - <span>2022</span>
+                </p>
+              </ListItem>
+            </ScrollAnimation>
+            <ScrollAnimation animateIn="bounceInRight" duration={1.9}>
+              <ListItem>
+                <WorkspacePremiumIcon sx={{ fontSize: "25px" }} /> &nbsp;
+                <p
+                  data-aos="fade-up-left"
+                  data-aos-duration="2500"
+                  style={{
+                    color: selected ? "white" : "#121212",
+                    fontFamily: "serif",
+                    fontWeight: "bold",
+                    fontSize: "1rem",
+                    display: "inline-block",
+                    margin: 0,
+                  }}
+                  // className={selected ? "overflow" : "overflownormal"}
+                >
+                  Completed MERN Stack Development - <span>2023</span>
+                </p>
+              </ListItem>
+            </ScrollAnimation>
+          </List>
+        </div>
+        <div
+          className={selected ? "designnameabout" : "normaldesignnameabout"}
+        ></div>
+        <div
+          className={selected ? "design1nameabout" : "normaldesign1nameabout"}
+        ></div>
+        <div
+          className={selected ? "design2nameabout" : "normaldesign2nameabout"}
+        ></div>
+      </div>
+
+      <div className={selected ? "div1" : "div1normal"}>
+        <ScrollAnimation animateIn="bounceInLeft" duration={2}>
+          <h3
+            variant="h3"
             style={{
-              color: selected ? "white" : "#121212",
-              fontFamily: "serif",
-              fontWeight: "bold",
-              fontSize: "1rem",
+              margin: "0.5em",
+            }}
+            gutterBottom
+            data-aos="fade-right"
+            data-aos-duration="1500"
+          >
+            Academic Details
+            <Divider
+              variant="middle"
+              sx={{
+                backgroundColor: "rgb(110, 255, 110)",
+                height: "5px",
+                width: "170px",
+              }}
+            />
+          </h3>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-around",
             }}
           >
-            Completed ASNT-NDT Level 2 (PT,RT,UT,MPT) and a NDT Technician -{" "}
-            <span>2021</span>
-          </p>
-        </div>
-        <div style={{ display: "flex", flexWrap: "nowrap", margin: "0.5em" }}>
-          <WorkspacePremiumIcon sx={{ fontSize: "25px" }} /> &nbsp;
-          <p
-            data-aos="fade-up-left"
-            data-aos-duration="2500"
-            style={{
-              color: selected ? "white" : "#121212",
-              fontFamily: "serif",
-              fontWeight: "bold",
-              fontSize: "1rem",
-              display: "inline-block",
-            }}
-            className="overflow"
-          >
-            Completed Full Stack Development in JAVA - <span>2022</span>
-          </p>
-        </div>
-        <div style={{ display: "flex", flexWrap: "nowrap", margin: "0.5em" }}>
-          <WorkspacePremiumIcon sx={{ fontSize: "25px" }} /> &nbsp;
-          <p
-            data-aos="fade-up-left"
-            data-aos-duration="2500"
-            style={{
-              color: selected ? "white" : "#121212",
-              fontFamily: "serif",
-              fontWeight: "bold",
-              fontSize: "1rem",
-              display: "inline-block",
-            }}
-            className="overflow"
-          >
-            Completed MERN Stack Development - <span>2023</span>
-          </p>
-        </div>
+            <TableContainer
+              component={Paper}
+              sx={{ padding: "2px", margin: "2px", maxWidth: 400 }}
+            >
+              <Table
+                data-aos="zoom-in-right"
+                data-aos-duration="2000"
+                sx={{
+                  backgroundColor: selected ? "#121212" : "white",
+                }}
+                aria-label="customized table"
+              >
+                <TableHead>
+                  <TableRow>
+                    <StyledTableCell>Institutions</StyledTableCell>
+                    <StyledTableCell align="center">Grade</StyledTableCell>
+                    <StyledTableCell align="center">Percentage</StyledTableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows.map((row) => (
+                    <StyledTableRow key={row.name}>
+                      <StyledTableCell
+                        sx={{
+                          color: selected ? "white" : "#121212",
+                          fontFamily: "serif",
+                          fontWeight: "bold",
+                          fontSize: "1rem",
+                        }}
+                        component="th"
+                        scope="row"
+                      >
+                        {row.name}
+                      </StyledTableCell>
+                      <StyledTableCell
+                        sx={{
+                          color: selected ? "white" : "#121212",
+                          fontFamily: "serif",
+                          fontWeight: "bold",
+                          fontSize: "1rem",
+                        }}
+                        align="center"
+                      >
+                        {row.calories}
+                      </StyledTableCell>
+                      <StyledTableCell
+                        sx={{
+                          color: selected ? "white" : "#121212",
+                          fontFamily: "serif",
+                          fontWeight: "bold",
+                          fontSize: "1rem",
+                        }}
+                        align="center"
+                      >
+                        {row.fat}
+                      </StyledTableCell>
+                    </StyledTableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </div>
+        </ScrollAnimation>
+        <div
+          className={
+            selected ? "designnameacademic" : "normaldesignnameacademic"
+          }
+        ></div>
+        <div
+          className={
+            selected ? "design1nameacademic" : "normaldesign1nameacademic"
+          }
+        ></div>
+        <div
+          className={
+            selected ? "design2nameacademic" : "normaldesign2nameacademic"
+          }
+        ></div>
       </div>
       <br />
       <Divider />
       <br />
-      <div>
-        <h3
-          variant="h3"
-          data-aos="fade-left"
-          data-aos-duration="1500"
-          m={2}
-          gutterBottom
-          style={{ margin: "0.5em" }}
-        >
-          Skills
-        </h3>
-        <h3 variant="h6" style={{ margin: "0.5em" }} m={2} gutterBottom>
-          FrontEnd
-        </h3>
-        <List>
-          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
-            <HtmlIcon />
-            &nbsp;&nbsp;&nbsp;
-            <p
-              data-aos="fade-up-left"
-              data-aos-duration="2000"
+
+      <br />
+      <Divider />
+      <br />
+      <div
+        style={{
+          minHeight: "50vh",
+        }}
+      >
+        <div>
+          <h3
+            variant="h3"
+            data-aos="fade-left"
+            data-aos-duration="1500"
+            m={2}
+            gutterBottom
+            style={{ margin: "0.5em" }}
+          >
+            Skills
+            <Divider
+              variant="middle"
+              sx={{
+                backgroundColor: "rgb(110, 255, 110)",
+                height: "5px",
+                width: "30px",
+              }}
+            />
+          </h3>
+
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <div
               style={{
-                margin: "0px",
-                color: "red",
-                color: selected ? "white" : "#121212",
-                fontFamily: "serif",
-                fontWeight: "bold",
-                fontSize: "1rem",
+                marginTop: "10px",
+                minWidth: "280px",
+                border: "1px solid grey",
+                borderRadius: "8px",
+                boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
               }}
             >
-              HTML
-            </p>
-          </ListItem>
-          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
-            <CssIcon />
-            &nbsp;&nbsp;&nbsp;
-            <p
-              data-aos="fade-up-left"
-              data-aos-duration="2000"
+              <h3 variant="h6" style={{ margin: "0.5em" }} m={2} gutterBottom>
+                FrontEnd
+              </h3>
+              <Divider
+                variant="middle"
+                sx={{ backgroundColor: "rgb(110, 255, 110)", height: "2px" }}
+              />
+              <ScrollAnimation animateIn="fadeInDown" duration={3}>
+                <List>
+                  <ListItem
+                    sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}
+                  >
+                    <HtmlIcon />
+                    &nbsp;&nbsp;&nbsp;
+                    <p
+                      data-aos="fade-up-left"
+                      data-aos-duration="2000"
+                      style={{
+                        margin: "0px",
+                        color: "red",
+                        color: selected ? "white" : "#121212",
+                        fontFamily: "serif",
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      HTML
+                    </p>
+                  </ListItem>
+
+                  <ListItem
+                    sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}
+                  >
+                    <CssIcon />
+                    &nbsp;&nbsp;&nbsp;
+                    <p
+                      data-aos="fade-up-left"
+                      data-aos-duration="2000"
+                      style={{
+                        margin: "0px",
+                        color: "red",
+                        color: selected ? "white" : "#121212",
+                        fontFamily: "serif",
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      CSS
+                    </p>
+                  </ListItem>
+
+                  <ListItem
+                    sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}
+                  >
+                    <JavascriptIcon />
+                    &nbsp;&nbsp;&nbsp;
+                    <p
+                      data-aos="fade-up-left"
+                      data-aos-duration="2000"
+                      style={{
+                        margin: "0px",
+                        color: "red",
+                        color: selected ? "white" : "#121212",
+                        fontFamily: "serif",
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      JavaScript
+                    </p>
+                  </ListItem>
+
+                  <ListItem
+                    sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}
+                  >
+                    <JavascriptIcon />
+                    &nbsp;&nbsp;&nbsp;
+                    <p
+                      data-aos="fade-up-left"
+                      data-aos-duration="2000"
+                      style={{
+                        margin: "0px",
+                        color: "red",
+                        color: selected ? "white" : "#121212",
+                        fontFamily: "serif",
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      React.js
+                    </p>
+                  </ListItem>
+                </List>
+              </ScrollAnimation>
+            </div>
+            <div
               style={{
-                margin: "0px",
-                color: "red",
-                color: selected ? "white" : "#121212",
-                fontFamily: "serif",
-                fontWeight: "bold",
-                fontSize: "1rem",
+                marginTop: "10px",
+                minWidth: "280px",
+                border: "1px solid grey",
+                borderRadius: "8px",
+                boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
               }}
             >
-              CSS
-            </p>
-          </ListItem>
-          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
-            <JavascriptIcon />
-            &nbsp;&nbsp;&nbsp;
-            <p
-              data-aos="fade-up-left"
-              data-aos-duration="2000"
+              <h3 variant="h6" style={{ margin: "0.5em" }} m={2}>
+                Backend
+              </h3>
+              <Divider
+                variant="middle"
+                sx={{ backgroundColor: "rgb(110, 255, 110)", height: "2px" }}
+              />
+              <ScrollAnimation animateIn="fadeInDown" duration={3}>
+                <List>
+                  <ListItem
+                    sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}
+                  >
+                    <FreeBreakfastIcon />
+                    &nbsp;&nbsp;&nbsp;
+                    <p
+                      data-aos="fade-up-left"
+                      data-aos-duration="2000"
+                      style={{
+                        margin: "0px",
+                        color: "red",
+                        color: selected ? "white" : "#121212",
+                        fontFamily: "serif",
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      JAVA & ADV JAVA
+                    </p>
+                  </ListItem>
+                  <ListItem
+                    sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}
+                  >
+                    <JavascriptIcon />
+                    &nbsp;&nbsp;&nbsp;
+                    <p
+                      data-aos="fade-up-left"
+                      data-aos-duration="2000"
+                      style={{
+                        margin: "0px",
+                        color: "red",
+                        color: selected ? "white" : "#121212",
+                        fontFamily: "serif",
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      Node JS
+                    </p>
+                  </ListItem>
+                </List>
+              </ScrollAnimation>
+            </div>
+            <div
               style={{
-                margin: "0px",
-                color: "red",
-                color: selected ? "white" : "#121212",
-                fontFamily: "serif",
-                fontWeight: "bold",
-                fontSize: "1rem",
+                marginTop: "10px",
+                minWidth: "280px",
+                border: "1px solid grey",
+                borderRadius: "8px",
+                boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
               }}
             >
-              JavaScript
-            </p>
-          </ListItem>
-          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
-            <JavascriptIcon />
-            &nbsp;&nbsp;&nbsp;
-            <p
-              data-aos="fade-up-left"
-              data-aos-duration="2000"
-              style={{
-                margin: "0px",
-                color: "red",
-                color: selected ? "white" : "#121212",
-                fontFamily: "serif",
-                fontWeight: "bold",
-                fontSize: "1rem",
-              }}
-            >
-              React.js
-            </p>
-          </ListItem>
-        </List>
-        <h3 variant="h6" style={{ margin: "0.5em" }} m={2}>
-          Backend
-        </h3>
-        <List>
-          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
-            <FreeBreakfastIcon />
-            &nbsp;&nbsp;&nbsp;
-            <p
-              data-aos="fade-up-left"
-              data-aos-duration="2000"
-              style={{
-                margin: "0px",
-                color: "red",
-                color: selected ? "white" : "#121212",
-                fontFamily: "serif",
-                fontWeight: "bold",
-                fontSize: "1rem",
-              }}
-            >
-              JAVA & ADV JAVA
-            </p>
-          </ListItem>
-          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
-            <JavascriptIcon />
-            &nbsp;&nbsp;&nbsp;
-            <p
-              data-aos="fade-up-left"
-              data-aos-duration="2000"
-              style={{
-                margin: "0px",
-                color: "red",
-                color: selected ? "white" : "#121212",
-                fontFamily: "serif",
-                fontWeight: "bold",
-                fontSize: "1rem",
-              }}
-            >
-              Node JS
-            </p>
-          </ListItem>
-        </List>
-        <h3 variant="h6" style={{ margin: "0.5em" }} m={2}>
-          DataBase
-        </h3>
-        <List>
-          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
-            <StorageIcon />
-            &nbsp;&nbsp;&nbsp;
-            <p
-              data-aos="fade-up-left"
-              data-aos-duration="1000"
-              style={{
-                margin: "0px",
-                color: "red",
-                color: selected ? "white" : "#121212",
-                fontFamily: "serif",
-                fontWeight: "bold",
-                fontSize: "1rem",
-              }}
-            >
-              Oracle SQL and PLSQL
-            </p>
-          </ListItem>
-          <ListItem sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}>
-            <CloudDoneIcon />
-            &nbsp;&nbsp;&nbsp;
-            <p
-              // data-aos="fade-up-left"
-              // data-aos-duration="1000"
-              style={{
-                margin: "0px",
-                color: "red",
-                color: selected ? "white" : "#121212",
-                fontFamily: "serif",
-                fontWeight: "bold",
-                fontSize: "1rem",
-              }}
-            >
-              MongoDB
-            </p>
-          </ListItem>
-        </List>
+              <h3 variant="h6" style={{ margin: "0.5em" }} m={2}>
+                DataBase
+              </h3>
+              <Divider
+                variant="middle"
+                sx={{ backgroundColor: "rgb(110, 255, 110)", height: "2px" }}
+              />
+              <ScrollAnimation animateIn="fadeInDown" duration={3}>
+                <List>
+                  <ListItem
+                    sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}
+                  >
+                    <StorageIcon />
+                    &nbsp;&nbsp;&nbsp;
+                    <p
+                      data-aos="fade-up-left"
+                      data-aos-duration="1000"
+                      style={{
+                        margin: "0px",
+                        color: "red",
+                        color: selected ? "white" : "#121212",
+                        fontFamily: "serif",
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      Oracle SQL and PLSQL
+                    </p>
+                  </ListItem>
+                  <ListItem
+                    sx={{ padding: "0px 0px 0px 15px", margin: "0.5em" }}
+                  >
+                    <CloudDoneIcon />
+                    &nbsp;&nbsp;&nbsp;
+                    <p
+                      // data-aos="fade-up-left"
+                      // data-aos-duration="1000"
+                      style={{
+                        margin: "0px",
+                        color: "red",
+                        color: selected ? "white" : "#121212",
+                        fontFamily: "serif",
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      MongoDB
+                    </p>
+                  </ListItem>
+                </List>
+              </ScrollAnimation>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div style={{ height: "70px" }}></div>
     </Box>
   );
