@@ -8,7 +8,7 @@
 } */
 
 .cardmain {
-  color: black;
+  color: #05386b;
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -29,13 +29,14 @@
   max-width: 345px;
   margin-top: 20px;
   color: #121212;
+  background-color: #8ee4af;
 }
 
 .ovr {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: white;
+  color: #05386b;
 }
 
 .ovr:hover {
@@ -48,6 +49,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #05386b;
 }
 
 .ovrnormal:hover {

@@ -45,7 +45,7 @@ const Main = () => {
       sx={{
         width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
         marginTop: "100px",
-        backgroundColor: selected ? "#121212" : "#e1e1e1",
+        backgroundColor: selected ? "#121212" : "#5cdb95",
       }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -57,10 +57,10 @@ const Main = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <HomeIcon sx={{ color: selected ? "white" : "#121212" }} />
+                  <HomeIcon sx={{ color: selected ? "white" : "#05386b" }} />
                 </ListItemIcon>
                 <ListItemText
-                  sx={{ color: selected ? "white" : "#121212" }}
+                  sx={{ color: selected ? "white" : "#05386b" }}
                   primary={"Home"}
                 />
               </ListItemButton>
@@ -70,10 +70,10 @@ const Main = () => {
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
-                  <InfoIcon sx={{ color: selected ? "white" : "#121212" }} />
+                  <InfoIcon sx={{ color: selected ? "white" : "#05386b" }} />
                 </ListItemIcon>
                 <ListItemText
-                  sx={{ color: selected ? "white" : "#121212" }}
+                  sx={{ color: selected ? "white" : "#05386b" }}
                   primary={"About"}
                 />
               </ListItemButton>
@@ -84,11 +84,11 @@ const Main = () => {
               <ListItemButton>
                 <ListItemIcon>
                   <AccountTreeIcon
-                    sx={{ color: selected ? "white" : "#121212" }}
+                    sx={{ color: selected ? "white" : "#05386b" }}
                   />
                 </ListItemIcon>
                 <ListItemText
-                  sx={{ color: selected ? "white" : "#121212" }}
+                  sx={{ color: selected ? "white" : "#05386b" }}
                   primary={"Projects"}
                 />
               </ListItemButton>
@@ -99,11 +99,11 @@ const Main = () => {
               <ListItemButton>
                 <ListItemIcon>
                   <AccountTreeIcon
-                    sx={{ color: selected ? "white" : "#121212" }}
+                    sx={{ color: selected ? "white" : "#05386b" }}
                   />
                 </ListItemIcon>
                 <ListItemText
-                  sx={{ color: selected ? "white" : "#121212" }}
+                  sx={{ color: selected ? "white" : "#05386b" }}
                   primary={"Resume"}
                 >
                   <a href="#main4">Resume</a>
@@ -129,10 +129,13 @@ const Main = () => {
     //     const bloburl = window.URL.createObjectURL(new Blob([blob]));
     //   });
 
-    const filename = "resume_ragunath"; //url.split("/").pop();
+    // const filename = "resume_ragunath"; //url.split("/").pop();
     const atag = document.createElement("a");
-    atag.href = url;
-    atag.setAttribute("download", filename);
+    atag.href =
+      "https://drive.google.com/file/d/12tPFvJ6Vt2cD0bwJ7oyOlfuA9ZvJZg_-/view?usp=sharing";
+    // atag.setAttribute("download", filename);
+    atag.setAttribute("target", "_blank");
+
     document.body.appendChild(atag);
     atag.click();
     atag.remove();
@@ -174,7 +177,7 @@ const Main = () => {
           height: "50px",
           display: "flex",
           justifyContent: "space-between",
-          backgroundColor: selected ? "#121212" : "#e1e1e1",
+          backgroundColor: selected ? "#121212" : "#5cdb95",
         }}
       >
         {["left"].map((anchor) => (
@@ -187,7 +190,7 @@ const Main = () => {
               sx={{
                 m: 2,
                 height: "20px",
-                color: selected ? "white" : "#121212",
+                color: selected ? "white" : "#05386b",
               }}
             >
               <MenuIcon />
@@ -198,7 +201,7 @@ const Main = () => {
               onClose={toggleDrawer(anchor, false)}
               PaperProps={{
                 sx: {
-                  backgroundColor: selected ? "#121212" : "#e1e1e1",
+                  backgroundColor: selected ? "#121212" : "#5cdb95",
                 },
               }}
             >
@@ -210,7 +213,7 @@ const Main = () => {
           <a
             style={{
               textDecoration: "none",
-              color: selected ? "white" : "#121212",
+              color: selected ? "white" : "#05386b",
             }}
             href="#main1"
           >
@@ -220,7 +223,7 @@ const Main = () => {
           <a
             style={{
               textDecoration: "none",
-              color: selected ? "white" : "#121212",
+              color: selected ? "white" : "#05386b",
             }}
             href="#main2"
           >
@@ -230,7 +233,7 @@ const Main = () => {
           <a
             style={{
               textDecoration: "none",
-              color: selected ? "white" : "#121212",
+              color: selected ? "white" : "#05386b",
             }}
             href="#main3"
           >
@@ -242,7 +245,7 @@ const Main = () => {
               <a
                 style={{
                   textDecoration: "none",
-                  color: selected ? "white" : "#121212",
+                  color: selected ? "white" : "#05386b",
                 }}
                 href="#main4"
               >
@@ -269,13 +272,13 @@ const Main = () => {
             {selected ? (
               <DarkModeIcon
                 sx={{
-                  color: selected ? "white" : "#121212",
+                  color: selected ? "white" : "#05386b",
                 }}
               />
             ) : (
               <LightModeIcon
                 sx={{
-                  color: selected ? "white" : "#121212",
+                  color: selected ? "white" : "#05386b",
                   background: "none",
                   border: "none",
                 }}
@@ -289,21 +292,34 @@ const Main = () => {
           display: "flex",
           justifyContent: "center",
           paddingTop: "40px",
-          backgroundColor: selected ? "#121212" : " white",
+          backgroundColor: selected ? "#121212" : "#5cdb95",
+          flexWrap: "wrap",
+          alignItems: "center",
         }}
       >
         <Caroussel />
       </div>
-      <Box id={"main1"} className={selected ? "div1" : "div1normal"}>
+      <div
+        id={"main1"}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+          position: "relative",
+          backgroundColor: selected ? "#121212" : "#8ee4af",
+        }}
+      >
         <ScrollAnimation animateIn="zoomIn" duration={2}>
           <h3 className={selected ? "div1title" : "div1titlenormal"}>
             Welcome to my PortFolio
           </h3>
         </ScrollAnimation>
-        <div className={selected ? "designname" : "normaldesignname"}></div>
+        {/* <div className={selected ? "designname" : "normaldesignname"}></div>
         <div className={selected ? "design1name" : "normaldesign1name"}></div>
-        <div className={selected ? "design2name" : "normaldesign2name"}></div>
-      </Box>
+        <div className={selected ? "design2name" : "normaldesign2name"}></div> */}
+      </div>
 
       <Box
         className={selected ? "div2" : "div2normal"}
@@ -348,11 +364,11 @@ const Main = () => {
       <div
         id="main3"
         style={{
-          backgroundColor: selected && "#121212",
+          backgroundColor: selected ? "#121212" : "#8ee4af",
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-evenly",
-
+          minWidth: "100vw",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           color: "white",
@@ -366,10 +382,11 @@ const Main = () => {
         <ScrollAnimation animateIn="fadeInDown" duration={2}>
           <h3
             style={{
-              color: selected ? "white" : "#121212",
+              color: selected ? "white" : "#05386B",
               fontFamily: "serif",
               fontWeight: "bold",
               fontSize: "3rem",
+              marginTop: "20px",
             }}
             data-aos="fade-right"
             data-aos-duration="2000"
@@ -379,17 +396,16 @@ const Main = () => {
           </h3>
           <Divider
             variant="middle"
-            sx={{ backgroundColor: "rgb(110, 255, 110)", height: "5px" }}
+            sx={{ backgroundColor: "#05386b", height: "5px" }}
           />
         </ScrollAnimation>
 
         <ScrollAnimation animateIn="fadeInRight" duration={2}>
           <div
             style={{
-              height: "400px",
               marginTop: "90px",
               textAlign: "center",
-              color: selected ? "white" : "#121212",
+              color: selected ? "white" : "#05386B",
             }}
           >
             <h3
@@ -402,10 +418,10 @@ const Main = () => {
               }}
               className="div3exp"
             >
-              Software Developer - 2022
+              Software Developer
               <Divider
                 variant="middle"
-                sx={{ backgroundColor: "rgb(110, 255, 110)", height: "5px" }}
+                sx={{ backgroundColor: "#05386b", height: "5px" }}
               />
             </h3>
             <div style={{ maxWidth: "300px", textAlign: "start" }}>
@@ -437,7 +453,7 @@ const Main = () => {
         className="exp"
         id="main4"
         style={{
-          backgroundColor: selected && "#121212",
+          backgroundColor: selected ? "#121212" : "#5cdb95",
           display: "flex",
           flexWrap: "wrap",
           color: "white",
@@ -459,7 +475,7 @@ const Main = () => {
           <ScrollAnimation animateIn="fadeInLeft" duration={2}>
             <Typography
               sx={{
-                color: selected ? "white" : "#121212",
+                color: selected ? "white" : "#05386B",
                 fontFamily: "serif",
                 fontWeight: "bold",
                 fontSize: "2rem",
@@ -497,7 +513,7 @@ const Main = () => {
                 style={{
                   textAlign: "center",
                   paddingBottom: "10px",
-                  color: selected ? "white" : "#121212",
+                  color: selected ? "white" : "#05386B",
                   fontFamily: "serif",
                   fontWeight: "bold",
                   fontSize: "2rem",
@@ -566,8 +582,8 @@ const Main = () => {
           </div>
         </ScrollAnimation>
       </div>
-      <div className="footer">
-        <span>© 2023 Ragunath AG</span>
+      <div className={selected ? "footer" : "footernormal"}>
+        <span style={{ marginBottom: "10px" }}>© 2023 Ragunath AG</span>
       </div>
     </Box>
   );

@@ -59,8 +59,8 @@ const About = () => {
   return (
     <Box
       sx={{
-        backgroundColor: selected && "#121212",
-        color: selected ? "white" : "#121212",
+        backgroundColor: selected ? "#121212" : "#5cdb95",
+        color: selected ? "white" : "#05386b",
 
         // backgroundImage: selected
         //   ? ""
@@ -81,9 +81,9 @@ const About = () => {
         }}
       >
         {selected ? (
-          <DarkModeIcon sx={{ color: selected ? "white" : "#121212" }} />
+          <DarkModeIcon sx={{ color: selected ? "white" : "#05386b" }} />
         ) : (
-          <LightModeIcon sx={{ color: selected ? "white" : "#121212" }} />
+          <LightModeIcon sx={{ color: selected ? "white" : "#05386b" }} />
         )}
       </ToggleButton>
       <Link
@@ -91,7 +91,7 @@ const About = () => {
         style={{
           textDecoration: "none",
           padding: "4px",
-          color: selected ? "white" : "#121212",
+          color: selected ? "white" : "#05386b",
         }}
       >
         <ArrowCircleLeftIcon sx={{ fontSize: "20px" }} /> Back
@@ -121,7 +121,7 @@ const About = () => {
             <Divider
               variant="middle"
               sx={{
-                backgroundColor: "rgb(110, 255, 110)",
+                backgroundColor: "#05386b",
                 height: "5px",
                 width: "130px",
               }}
@@ -138,7 +138,7 @@ const About = () => {
                   data-aos-duration="1500"
                   // className={selected ? "overflow" : "overflownormal"}
                   style={{
-                    color: selected ? "white" : "#121212",
+                    color: selected ? "white" : "#05386b",
                     fontFamily: "serif",
                     fontWeight: "bold",
                     fontSize: "1rem",
@@ -157,7 +157,7 @@ const About = () => {
                   data-aos="fade-up-left"
                   data-aos-duration="2500"
                   style={{
-                    color: selected ? "white" : "#121212",
+                    color: selected ? "white" : "#05386b",
                     fontFamily: "serif",
                     fontWeight: "bold",
                     fontSize: "1rem",
@@ -177,7 +177,7 @@ const About = () => {
                   data-aos="fade-up-left"
                   data-aos-duration="2500"
                   style={{
-                    color: selected ? "white" : "#121212",
+                    color: selected ? "white" : "#05386b",
                     fontFamily: "serif",
                     fontWeight: "bold",
                     fontSize: "1rem",
@@ -218,7 +218,7 @@ const About = () => {
             <Divider
               variant="middle"
               sx={{
-                backgroundColor: "rgb(110, 255, 110)",
+                backgroundColor: "#05386b",
                 height: "5px",
                 width: "170px",
               }}
@@ -234,7 +234,11 @@ const About = () => {
           >
             <TableContainer
               component={Paper}
-              sx={{ padding: "2px", margin: "2px", maxWidth: 400 }}
+              sx={{
+                padding: "2px",
+                margin: "2px",
+                maxWidth: 400,
+              }}
             >
               <Table
                 data-aos="zoom-in-right"
@@ -260,6 +264,7 @@ const About = () => {
                           fontFamily: "serif",
                           fontWeight: "bold",
                           fontSize: "1rem",
+                          backgroundColor: selected ? "#121212" : "#5cdb95",
                         }}
                         component="th"
                         scope="row"
@@ -272,6 +277,7 @@ const About = () => {
                           fontFamily: "serif",
                           fontWeight: "bold",
                           fontSize: "1rem",
+                          backgroundColor: selected ? "#121212" : "#8ee4af",
                         }}
                         align="center"
                       >
@@ -283,6 +289,7 @@ const About = () => {
                           fontFamily: "serif",
                           fontWeight: "bold",
                           fontSize: "1rem",
+                          backgroundColor: selected ? "#121212" : "#5cdb95",
                         }}
                         align="center"
                       >
@@ -336,7 +343,7 @@ const About = () => {
             <Divider
               variant="middle"
               sx={{
-                backgroundColor: "rgb(110, 255, 110)",
+                backgroundColor: "#05386b",
                 height: "5px",
                 width: "30px",
               }}
@@ -357,6 +364,7 @@ const About = () => {
                 border: "1px solid grey",
                 borderRadius: "8px",
                 boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
+                backgroundColor: selected ? "#121212" : "#8ee4af",
               }}
             >
               <h3 variant="h6" style={{ margin: "0.5em" }} m={2} gutterBottom>
@@ -364,7 +372,7 @@ const About = () => {
               </h3>
               <Divider
                 variant="middle"
-                sx={{ backgroundColor: "rgb(110, 255, 110)", height: "2px" }}
+                sx={{ backgroundColor: "#05386b", height: "2px" }}
               />
               <ScrollAnimation animateIn="fadeInDown" duration={3}>
                 <List>
@@ -379,7 +387,7 @@ const About = () => {
                       style={{
                         margin: "0px",
 
-                        color: selected ? "white" : "#121212",
+                        color: selected ? "white" : "#05386b",
                         fontFamily: "serif",
                         fontWeight: "bold",
                         fontSize: "1rem",
@@ -400,7 +408,7 @@ const About = () => {
                       style={{
                         margin: "0px",
 
-                        color: selected ? "white" : "#121212",
+                        color: selected ? "white" : "#05386b",
                         fontFamily: "serif",
                         fontWeight: "bold",
                         fontSize: "1rem",
@@ -421,7 +429,7 @@ const About = () => {
                       style={{
                         margin: "0px",
 
-                        color: selected ? "white" : "#121212",
+                        color: selected ? "white" : "#05386b",
                         fontFamily: "serif",
                         fontWeight: "bold",
                         fontSize: "1rem",
@@ -442,7 +450,7 @@ const About = () => {
                       style={{
                         margin: "0px",
 
-                        color: selected ? "white" : "#121212",
+                        color: selected ? "white" : "#05386b",
                         fontFamily: "serif",
                         fontWeight: "bold",
                         fontSize: "1rem",
@@ -461,6 +469,7 @@ const About = () => {
                 border: "1px solid grey",
                 borderRadius: "8px",
                 boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
+                backgroundColor: selected ? "#121212" : "#8ee4af",
               }}
             >
               <h3 variant="h6" style={{ margin: "0.5em" }} m={2}>
@@ -468,7 +477,7 @@ const About = () => {
               </h3>
               <Divider
                 variant="middle"
-                sx={{ backgroundColor: "rgb(110, 255, 110)", height: "2px" }}
+                sx={{ backgroundColor: "#05386b", height: "2px" }}
               />
               <ScrollAnimation animateIn="fadeInDown" duration={3}>
                 <List>
@@ -483,7 +492,7 @@ const About = () => {
                       style={{
                         margin: "0px",
 
-                        color: selected ? "white" : "#121212",
+                        color: selected ? "white" : "#05386b",
                         fontFamily: "serif",
                         fontWeight: "bold",
                         fontSize: "1rem",
@@ -503,7 +512,7 @@ const About = () => {
                       style={{
                         margin: "0px",
 
-                        color: selected ? "white" : "#121212",
+                        color: selected ? "white" : "#05386b",
                         fontFamily: "serif",
                         fontWeight: "bold",
                         fontSize: "1rem",
@@ -522,6 +531,7 @@ const About = () => {
                 border: "1px solid grey",
                 borderRadius: "8px",
                 boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
+                backgroundColor: selected ? "#121212" : "#8ee4af",
               }}
             >
               <h3 variant="h6" style={{ margin: "0.5em" }} m={2}>
@@ -529,7 +539,7 @@ const About = () => {
               </h3>
               <Divider
                 variant="middle"
-                sx={{ backgroundColor: "rgb(110, 255, 110)", height: "2px" }}
+                sx={{ backgroundColor: "#05386b", height: "2px" }}
               />
               <ScrollAnimation animateIn="fadeInDown" duration={3}>
                 <List>
@@ -544,7 +554,7 @@ const About = () => {
                       style={{
                         margin: "0px",
 
-                        color: selected ? "white" : "#121212",
+                        color: selected ? "white" : "#05386b",
                         fontFamily: "serif",
                         fontWeight: "bold",
                         fontSize: "1rem",
@@ -564,7 +574,7 @@ const About = () => {
                       style={{
                         margin: "0px",
 
-                        color: selected ? "white" : "#121212",
+                        color: selected ? "white" : "#05386b",
                         fontFamily: "serif",
                         fontWeight: "bold",
                         fontSize: "1rem",

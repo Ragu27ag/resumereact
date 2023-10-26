@@ -55,7 +55,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  background-color: white;
+  background-color: #8ee4af;
 }
 
 .designnameabout {
@@ -150,7 +150,7 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color: green;
+  background-color: #5cdb95;
   position: absolute;
   bottom: 0px;
   left: 10px;
@@ -161,7 +161,7 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color: green;
+  background-color: #5cdb95;
   position: absolute;
   bottom: 0px;
   left: 10px;
@@ -172,7 +172,7 @@
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  background-color: green;
+  background-color: #5cdb95;
   position: absolute;
   bottom: 120px;
   left: 200px;
@@ -183,7 +183,7 @@
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  background-color: green;
+  background-color: #5cdb95;
   position: absolute;
   bottom: 120px;
   left: 200px;

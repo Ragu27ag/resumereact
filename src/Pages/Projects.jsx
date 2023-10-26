@@ -26,6 +26,14 @@ const Projects = () => {
       src: vidsrc,
       github: "https://github.com/Ragu27ag/zenfrontend",
       launch: "https://silver-blancmange-af8400.netlify.app/login",
+      stacks: [
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "Multer",
+        "MaterialUI",
+      ],
     },
     {
       name: "Bus ticket Booking Application",
@@ -33,6 +41,14 @@ const Projects = () => {
       src: vidsrc2,
       github: "https://github.com/Ragu27ag/busticket",
       launch: "https://strong-parfait-f69617.netlify.app/",
+      stacks: [
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "Nodemailer",
+        "MaterialUI",
+      ],
     },
     {
       name: "Project Site (Phase - 1)",
@@ -40,13 +56,21 @@ const Projects = () => {
       src: vidsrc3,
       github: "",
       launch: "https://simplebro.netlify.app/",
+      stacks: [
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "Express.js",
+        "React - Bootstrap",
+        "MaterialUI",
+      ],
     },
   ];
 
   return (
     <div
       style={{
-        backgroundColor: selected ? "#121212" : "white",
+        backgroundColor: selected ? "#121212" : "#5cdb95",
         position: "relative",
       }}
       className="main"
@@ -57,7 +81,7 @@ const Projects = () => {
           style={{
             textDecoration: "none",
             padding: "4px",
-            color: selected ? "white" : "#121212",
+            color: selected ? "white" : "#05386b",
           }}
         >
           <ArrowCircleLeftIcon sx={{ fontSize: "20px" }} /> Back
@@ -78,18 +102,18 @@ const Projects = () => {
         }}
       >
         {selected ? (
-          <DarkModeIcon sx={{ color: selected ? "white" : "#121212" }} />
+          <DarkModeIcon sx={{ color: selected ? "white" : "#05386b" }} />
         ) : (
-          <LightModeIcon sx={{ color: selected ? "white" : "#121212" }} />
+          <LightModeIcon sx={{ color: selected ? "white" : "#05386b" }} />
         )}
       </ToggleButton>
-      <div style={{ margin: "5px", color: selected ? "white" : "black" }}>
+      <div style={{ margin: "5px", color: selected ? "white" : "#05386b" }}>
         <h2>
           Projects{" "}
           <Divider
             variant="middle"
             sx={{
-              backgroundColor: "rgb(110, 255, 110)",
+              backgroundColor: "#05386b",
               height: "5px",
               width: "70px",
             }}
@@ -123,7 +147,12 @@ const Projects = () => {
               </video>
             </CardMedia>
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div" sx={{}}>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                sx={{ color: "#05386b" }}
+              >
                 {prt.name}
               </Typography>
               <Typography
@@ -133,6 +162,40 @@ const Projects = () => {
               >
                 {prt.des}
               </Typography>
+              <Typography
+                gutterBottom
+                variant="h6"
+                component="div"
+                sx={{ color: "#05386b", marginTop: "15px" }}
+              >
+                Built Using
+              </Typography>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "space-around",
+                  textAlign: "center",
+                }}
+              >
+                {prt.stacks.map((val, i) => (
+                  <div
+                    style={{
+                      backgroundColor: "#8ee4af",
+                      marginTop: "15px",
+                      borderRadius: "2px",
+                      color: "#05386b",
+                      width: "100px",
+                      maxHeight: "50px",
+                    }}
+                    key={i}
+                  >
+                    <span style={{ fontFamily: "serif", fontSize: "small" }}>
+                      {val}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </CardContent>
             <CardActions>
               <Link to={prt.github} target="_blank">
@@ -151,7 +214,7 @@ const Projects = () => {
               </Link>
 
               <Link to={prt.launch} target="_blank">
-                <LaunchIcon sx={{ color: selected ? "white" : "black" }} />
+                <LaunchIcon sx={{ color: selected ? "#05386b" : "black" }} />
               </Link>
             </CardActions>
           </Card>
