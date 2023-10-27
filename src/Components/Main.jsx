@@ -358,16 +358,14 @@ const Main = () => {
         </div>
         <Box data-aos="zoom-in-left" data-aos-duration="3000">
           <ScrollAnimation animateIn="rotateIn" duration={2}>
-            <img src={mern} alt="mern" height={300} width={320} />
+            <img
+              style={{ display: selected && "none" }}
+              src={mern}
+              alt="mern"
+              height={300}
+              width={320}
+            />
           </ScrollAnimation>
-
-          <div className={selected ? "designintro" : "normaldesignintro"}></div>
-          <div
-            className={selected ? "design1intro" : "normaldesign1intro"}
-          ></div>
-          <div
-            className={selected ? "design2intro" : "normaldesign2intro"}
-          ></div>
         </Box>
       </Box>
       <div
