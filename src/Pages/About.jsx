@@ -22,6 +22,8 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import ScrollAnimation from "react-animate-on-scroll";
 
+import cert from "./vector-cartoon-certificate-icon-comic-style-removebg-preview.png";
+
 const About = () => {
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -108,7 +110,7 @@ const About = () => {
           position: "relative",
         }}
       >
-        <div style={{}}>
+        <div style={{ zIndex: "1" }}>
           <h3
             variant="h3"
             m={2}
@@ -140,7 +142,7 @@ const About = () => {
                   style={{
                     color: selected ? "white" : "#05386b",
                     fontFamily: "serif",
-                    fontWeight: "bold",
+                    fontWeight: "bolder",
                     fontSize: "1rem",
                     margin: 0,
                   }}
@@ -159,7 +161,7 @@ const About = () => {
                   style={{
                     color: selected ? "white" : "#05386b",
                     fontFamily: "serif",
-                    fontWeight: "bold",
+                    fontWeight: "bolder",
                     fontSize: "1rem",
                     display: "inline-block",
                     margin: 0,
@@ -179,7 +181,7 @@ const About = () => {
                   style={{
                     color: selected ? "white" : "#05386b",
                     fontFamily: "serif",
-                    fontWeight: "bold",
+                    fontWeight: "bolder",
                     fontSize: "1rem",
                     display: "inline-block",
                     margin: 0,
@@ -192,15 +194,18 @@ const About = () => {
             </ScrollAnimation>
           </List>
         </div>
+
         <div
-          className={selected ? "designnameabout" : "normaldesignnameabout"}
-        ></div>
-        <div
-          className={selected ? "design1nameabout" : "normaldesign1nameabout"}
-        ></div>
-        <div
-          className={selected ? "design2nameabout" : "normaldesign2nameabout"}
-        ></div>
+          style={{
+            position: "absolute",
+            bottom: "0px",
+            right: "3px",
+            zIndex: "0",
+            display: selected && "none",
+          }}
+        >
+          <img src={cert} alt="cert" height={300} width={300} />
+        </div>
       </div>
 
       <div className={selected ? "div1" : "div1normal"}>

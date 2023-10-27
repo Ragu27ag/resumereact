@@ -22,6 +22,10 @@ import ToggleButton from "@mui/material/ToggleButton";
 import "../CSS/main.css";
 import ScrollAnimation from "react-animate-on-scroll";
 
+import work from "./34444908-removebg-preview.png";
+
+import mern from "./large_2x-removebg-preview.png";
+
 const Main = () => {
   const [state, setState] = React.useState({
     left: false,
@@ -335,21 +339,26 @@ const Main = () => {
         <div data-aos="zoom-in-right" data-aos-duration="2000">
           <ScrollAnimation animateIn="bounceInLeft" duration={2}>
             <h2 className="div2name">I'M Ragunath AG</h2>
-          </ScrollAnimation>
-        </div>
-        <Box data-aos="zoom-in-left" data-aos-duration="3000">
-          <ScrollAnimation animateIn="bounceInRight" duration={2}>
-            <h2
+            <h3
               style={{
                 fontFamily: "serif",
                 fontWeight: "bold",
-                fontSize: "3rem",
+                fontSize: "2rem",
                 paddingTop: "8px",
               }}
               className="div2role"
             >
               MERN Stack Developer
-            </h2>
+            </h3>
+            <Divider
+              variant="middle"
+              sx={{ backgroundColor: "#05386b", height: "2px", width: "250px" }}
+            />
+          </ScrollAnimation>
+        </div>
+        <Box data-aos="zoom-in-left" data-aos-duration="3000">
+          <ScrollAnimation animateIn="rotateIn" duration={2}>
+            <img src={mern} alt="mern" height={300} width={320} />
           </ScrollAnimation>
 
           <div className={selected ? "designintro" : "normaldesignintro"}></div>
@@ -379,27 +388,33 @@ const Main = () => {
           //   : 'url("https://img.freepik.com/premium-vector/network-sophisticated-digital-connections_49459-659.jpg")',
         }}
       >
-        <ScrollAnimation animateIn="fadeInDown" duration={2}>
-          <h3
-            style={{
-              color: selected ? "white" : "#05386B",
-              fontFamily: "serif",
-              fontWeight: "bold",
-              fontSize: "3rem",
-              marginTop: "20px",
-            }}
-            data-aos="fade-right"
-            data-aos-duration="2000"
-            className="div3work"
-          >
-            Work Experience
-          </h3>
-          <Divider
-            variant="middle"
-            sx={{ backgroundColor: "#05386b", height: "5px" }}
-          />
-        </ScrollAnimation>
-
+        <div>
+          <ScrollAnimation animateIn="fadeInDown" duration={2}>
+            <h3
+              style={{
+                color: selected ? "white" : "#05386B",
+                fontFamily: "serif",
+                fontWeight: "bold",
+                fontSize: "3rem",
+                marginTop: "20px",
+              }}
+              data-aos="fade-right"
+              data-aos-duration="2000"
+              className="div3work"
+            >
+              Work Experience
+            </h3>
+            <Divider
+              variant="middle"
+              sx={{ backgroundColor: "#05386b", height: "5px" }}
+            />
+          </ScrollAnimation>
+          <ScrollAnimation animateIn="fadeInUp" duration={2}>
+            <div style={{ marginTop: "50px", display: selected && "none" }}>
+              <img src={work} alt="img" height={200} width={300} />
+            </div>
+          </ScrollAnimation>
+        </div>
         <ScrollAnimation animateIn="fadeInRight" duration={2}>
           <div
             style={{
@@ -533,7 +548,7 @@ const Main = () => {
             >
               <div style={{ marginLeft: "10px" }}>
                 <Link
-                  to="https://www.linkedin.com/in/ragunath-ag-258479285/"
+                  to="https://www.linkedin.com/in/ragunath-a-g"
                   target="_blank"
                 >
                   <img

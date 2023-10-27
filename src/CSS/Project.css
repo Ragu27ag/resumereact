@@ -18,7 +18,7 @@
 }
 
 .card1 {
-  max-width: 345px;
+  max-width: 300px;
   margin-top: 20px;
   background-color: black;
   border: 1px solid white;
@@ -26,7 +26,7 @@
 }
 
 .cardnormal {
-  max-width: 345px;
+  max-width: 300px;
   margin-top: 20px;
   color: #121212;
   background-color: #8ee4af;
@@ -56,4 +56,19 @@
   white-space: normal;
   overflow: visible;
   height: auto;
+}
+
+.built {
+  background-color: #8ee4af;
+  margin-top: 15px;
+  border-radius: 2px;
+  color: #05386b;
+  width: 100px;
+  max-height: 50px;
+  transition: transform 1s;
+}
+
+.built :hover {
+  opacity: 0.5;
+  transform: translate(20px, 20px);
 }

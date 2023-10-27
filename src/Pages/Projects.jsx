@@ -33,11 +33,12 @@ const Projects = () => {
         "Express.js",
         "Multer",
         "MaterialUI",
+        "Chart.js",
       ],
     },
     {
       name: "Bus ticket Booking Application",
-      des: "Application to book bus tickets.It has two interfaces one for user and admin Users has to register and create an account and after theauthentication process they are permited to access theapplication.They can book tickets.Admins has to login through theircredentials and can modify and delete tickets.Details are stoered incloud",
+      des: "Application to book bus tickets.It has two interfaces one for user and admin Users has to register and create an account and after the authentication process they are permited to access the application.They can book tickets.Admins has to login through their credentials and can modify and delete tickets.Details are stored incloud",
       src: vidsrc2,
       github: "https://github.com/Ragu27ag/busticket",
       launch: "https://strong-parfait-f69617.netlify.app/",
@@ -52,7 +53,7 @@ const Projects = () => {
     },
     {
       name: "Project Site (Phase - 1)",
-      des: "Real time project for a startup which sells their products through online(still under development)",
+      des: "Real time project for a startup that sells their products through online(still under development)",
       src: vidsrc3,
       github: "",
       launch: "https://simplebro.netlify.app/",
@@ -141,7 +142,7 @@ const Projects = () => {
           >
             <CardMedia>
               {" "}
-              <video width="345px" height="200px" autoPlay loop muted>
+              <video width="300px" height="200px" autoPlay loop muted>
                 <source src={prt.src} type="video/mp4" />
                 Your browser does not support HTML5 video
               </video>
@@ -179,18 +180,14 @@ const Projects = () => {
                 }}
               >
                 {prt.stacks.map((val, i) => (
-                  <div
-                    style={{
-                      backgroundColor: "#8ee4af",
-                      marginTop: "15px",
-                      borderRadius: "2px",
-                      color: "#05386b",
-                      width: "100px",
-                      maxHeight: "50px",
-                    }}
-                    key={i}
-                  >
-                    <span style={{ fontFamily: "serif", fontSize: "small" }}>
+                  <div style={{}} key={i} className="built">
+                    <span
+                      style={{
+                        fontFamily: "serif",
+                        fontSize: "13px",
+                        fontWeight: "bold",
+                      }}
+                    >
                       {val}
                     </span>
                   </div>
