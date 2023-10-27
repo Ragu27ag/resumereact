@@ -65,10 +65,10 @@
   color: #05386b;
   width: 100px;
   max-height: 50px;
-  transition: transform 1s;
+  transition: transform 2s ease;
 }
 
 .built :hover {
-  opacity: 0.5;
-  transform: translate(20px, 20px);
+  opacity: 0.9;
+  transform: translateY(-2px);
 }

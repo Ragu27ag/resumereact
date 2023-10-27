@@ -181,15 +181,16 @@ const Projects = () => {
               >
                 {prt.stacks.map((val, i) => (
                   <div style={{}} key={i} className="built">
-                    <span
+                    <p
                       style={{
                         fontFamily: "serif",
                         fontSize: "13px",
                         fontWeight: "bold",
+                        margin: 0,
                       }}
                     >
                       {val}
-                    </span>
+                    </p>
                   </div>
                 ))}
               </div>
