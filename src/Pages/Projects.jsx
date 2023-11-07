@@ -55,7 +55,7 @@ const Projects = () => {
         "Express.js",
         "Nodemailer",
         "MaterialUI",
-        "Striper - Payment gateway",
+        "Stripe-Payment gateway",
       ],
     },
     {
