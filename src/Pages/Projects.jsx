@@ -12,19 +12,23 @@ import "../CSS/Project.css";
 import vidsrc from "../Videos/20231019_132928.mp4";
 import vidsrc2 from "../Videos/20231019_133401.mp4";
 import vidsrc3 from "../Videos/20231019_133626.mp4";
+import vidsrc4 from "../Videos/VID_20231107_140012.mp4";
 
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 const Projects = () => {
   const [selected, setSelected] = React.useState(false);
+  const [fe, setFe] = React.useState(false);
+  const [be, setBe] = React.useState(false);
 
   const prjts = [
     {
       name: "Zenclass Portal",
       des: "Zen Student and admin dashboard Application",
       src: vidsrc,
-      github: "https://github.com/Ragu27ag/zenfrontend",
+      githubfront: "https://github.com/Ragu27ag/zenfrontend",
+      githubback: "https://github.com/Ragu27ag/zenbackendup",
       launch: "https://silver-blancmange-af8400.netlify.app/login",
       stacks: [
         "React.js",
@@ -34,13 +38,15 @@ const Projects = () => {
         "Multer",
         "MaterialUI",
         "Chart.js",
+        "Socket.io",
       ],
     },
     {
       name: "Bus ticket Booking Application",
       des: "Application to book bus tickets.It has two interfaces one for user and admin Users has to register and create an account and after the authentication process they are permited to access the application.They can book tickets.Admins has to login through their credentials and can modify and delete tickets.Details are stored incloud",
       src: vidsrc2,
-      github: "https://github.com/Ragu27ag/busticket",
+      githubfront: "https://github.com/Ragu27ag/busticket",
+      githubback: "https://github.com/Ragu27ag/busticket-be",
       launch: "https://strong-parfait-f69617.netlify.app/",
       stacks: [
         "React.js",
@@ -49,6 +55,7 @@ const Projects = () => {
         "Express.js",
         "Nodemailer",
         "MaterialUI",
+        "Striper - Payment gateway",
       ],
     },
     {
@@ -65,6 +72,15 @@ const Projects = () => {
         "React - Bootstrap",
         "MaterialUI",
       ],
+    },
+    {
+      name: "Insert Query Generator",
+      des: "Application that generates insert queries for a single table that needs multiple datum to be inserted.Reduces the burden if we need to write more insert queries for a particular table",
+      src: vidsrc4,
+      githubfront: "https://github.com/Ragu27ag/querygenerator",
+      githubback: "https://github.com/Ragu27ag/querygeneratorbackend",
+      launch: "https://master--prismatic-churros-306206.netlify.app/",
+      stacks: ["React.js", "Node.js", "MongoDB", "Express.js", "MaterialUI"],
     },
   ];
 
@@ -196,15 +212,16 @@ const Projects = () => {
               </div>
             </CardContent>
             <CardActions>
-              <Link to={prt.github} target="_blank">
-                {prt.github ? (
+              <Link to={prt.githubfront} target="_blank">
+                {prt.githubfront ? (
                   <img
                     src={require("../Components/GitHub-Mark.png")}
                     height={30}
                     width={30}
-                    style={{ borderRadius: "50%" }}
                     alt="mail"
-                    className="div4icons3"
+                    className="div4icons1"
+                    onMouseOver={() => setFe(true)}
+                    onMouseOut={() => setFe(false)}
                   />
                 ) : (
                   ""
@@ -214,7 +231,33 @@ const Projects = () => {
               <Link to={prt.launch} target="_blank">
                 <LaunchIcon sx={{ color: selected ? "#05386b" : "black" }} />
               </Link>
+              <Link to={prt.githubback} target="_blank">
+                {prt.githubback ? (
+                  <img
+                    src={require("../Components/GitHub-Mark.png")}
+                    height={30}
+                    width={30}
+                    alt="mail"
+                    className="div4icons2"
+                    onMouseOver={() => setBe(true)}
+                    onMouseOut={() => setBe(false)}
+                  />
+                ) : (
+                  ""
+                )}
+              </Link>
             </CardActions>
+            {fe && (
+              <div className="hoverdiv1">
+                <span>ForntEnd</span>
+              </div>
+            )}
+            {be && (
+              <div className="hoverdiv2">
+                {" "}
+                <span>BackEnd</span>
+              </div>
+            )}
           </Card>
         ))}
       </div>

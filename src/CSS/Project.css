@@ -23,6 +23,7 @@
   background-color: black;
   border: 1px solid white;
   color: white;
+  position: relative;
 }
 
 .cardnormal {
@@ -30,6 +31,7 @@
   margin-top: 20px;
   color: #121212;
   background-color: #8ee4af;
+  position: relative;
 }
 
 .ovr {
@@ -71,4 +73,40 @@
 .built :hover {
   opacity: 0.9;
   transform: translateY(-2px);
+}
+
+.div4icons1 {
+  border-radius: 50%;
+}
+
+.div4icons2 {
+  border-radius: 50%;
+}
+
+.hoverdiv1 {
+  height: 12px;
+  position: absolute;
+  border: 1px solid grey;
+  bottom: 40px;
+  font-size: 8px;
+  left: 8px;
+  background-color: white;
+}
+
+.hoverdiv2 {
+  height: 12px;
+  position: absolute;
+  border: 1px solid grey;
+  bottom: 40px;
+  left: 80px;
+  font-size: 8px;
+  background-color: white;
+}
+
+.hoverdiv1 span {
+  padding: 2px;
+}
+
+.hoverdiv2 span {
+  padding: 2px;
 }
