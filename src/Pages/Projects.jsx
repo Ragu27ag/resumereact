@@ -247,12 +247,12 @@ const Projects = () => {
                 )}
               </Link>
             </CardActions>
-            {fe && (
+            {fe && prt.githubback && prt.githubfront && (
               <div className="hoverdiv1">
                 <span>ForntEnd</span>
               </div>
             )}
-            {be && (
+            {be && prt.githubback && prt.githubfront && (
               <div className="hoverdiv2">
                 {" "}
                 <span>BackEnd</span>
